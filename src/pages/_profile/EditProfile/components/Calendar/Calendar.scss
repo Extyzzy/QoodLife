@@ -1,0 +1,424 @@
+@import '../../../../../styles/app';
+
+.revert {
+  margin: 5px;
+}
+
+.root {
+  position: relative;
+  width: 100%;
+  min-height: 100px;
+  margin-bottom: 15px;
+  border: 2px solid darken($light-gray, 5%);
+
+  @include no-select();
+
+  & * {
+    vertical-align: top;
+  }
+
+  &.mobile {
+    border-left: 0;
+    border-right: 0;
+    min-height: 77px;
+
+    & > .head {
+      padding-bottom: 20px;
+      height: 20px;
+
+      & button {
+        font-size: 8px;
+      }
+
+      & > .monthName {
+        min-width: 80px;
+        height: 10px;
+        line-height: 10px;
+        font-size: 10px;
+        padding: 0 2px;
+      }
+    }
+
+    & > .body {
+      padding: 0;
+      margin: 5px 0 0;
+
+      & > .weekDaysLabel {
+        position: absolute;
+        z-index: 5;
+      }
+    }
+  }
+
+  & > .head {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    padding: 8px;
+
+    & h4 {
+      position: absolute;
+      margin: 0;
+      left: 5px;
+    }
+
+    & button {
+      display: inline-flex;
+      border: none;
+      font-size: 12px;
+      background-color: $primary-white;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    & > .revert {
+      position: absolute;
+      right: 5px;
+      font-size: 12px;
+      height: 28px;
+      width: 100px;
+      margin: 0;
+      background-color: $primary-white;
+      border: 1px solid #555;
+    }
+
+    & > .calendarNavigation {
+      display: inline-flex;
+      align-self: center;
+
+      & > .prevArrow {
+        &::before {
+          transform: rotate(90deg);
+        }
+      }
+
+      & > .nextArrow {
+        &::before {
+          transform: rotate(-90deg);
+        }
+      }
+
+      & > .monthName {
+        text-align: center;
+        min-width: 120px;
+        height: 24px;
+        line-height: 24px;
+        font-size: 22px;
+        margin: 0;
+        padding: 0 4px;
+      }
+    }
+  }
+
+  & > .body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 51px;
+    margin-bottom: 15px;
+    padding: 5px;
+
+    & > .weekDaysLabel {
+      width: 100%;
+      color: rgb(104, 107, 121);
+
+      & > .item {
+        display: inline-flex;
+        margin: 2px;
+        width: calc(100% / 7 - 4px);
+        height: 20px;
+
+        &.mobile {
+          font-size: 8px;
+          justify-content: center;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    & > .daysBox {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      & > .dayItem {
+        display: inline-flex;
+        margin: 2px;
+        width: calc(100% / 7 - 4px);
+        color: rgb(104, 107, 121);
+        cursor: pointer;
+
+        &:before{
+          content: "";
+          display: flex;
+          padding-top: 70%;
+        }
+
+        &.mobile {
+          margin: 0;
+          width: calc(100% / 7);
+          border-right: 0;
+          border-bottom: 0;
+
+          &:nth-child(7n+1) {
+            border-right: 1px solid darken($light-gray, 5%);
+
+            &:before{
+              padding-top: calc(150% + 2px);
+            }
+          }
+
+          &:before{
+            padding-top: 150%;
+          }
+
+          & > .details {
+            padding: 2px;
+
+            & > .date {
+              width: 100%;
+              height: 15px;
+              font-size: 25px;
+              line-height: 15px;
+              text-align: center;
+              top: 15px;
+              left: 0;
+            }
+
+            & > .monthName {
+              width: 100%;
+              font-size: 10px;
+              text-align: center;
+              top: 30px;
+              left: 0;
+            }
+
+            & > .pointers {
+              padding: 2px;
+              height: 8px;
+              display: flex;
+              justify-content: center;
+              top: 40px;
+              bottom: inherit;
+
+              & > .point {
+                width: 6px;
+                height: 6px;
+                background-color: transparent;
+                border: 1px solid darken($light-gray, 25%);
+              }
+            }
+          }
+        }
+
+        & > .details {
+          position: relative;
+          width: 100%;
+          padding: 5px;
+          border-radius: 2px;
+          border: 1px solid darken($light-gray, 5%);
+          box-sizing: border-box;
+
+          &.color {
+            border-color: $brand-danger;
+          }
+
+          & > .date {
+            position: absolute;
+            width: calc(100% - 10px);
+            top: 5px;
+            left: 5px;
+            font-size: 35px;
+            font-weight: bold;
+            margin: 0;
+            z-index: 2;
+
+            &.withEvent {
+              color: $primary-white
+            }
+          }
+
+          & > .monthName {
+            position: absolute;
+            width: calc(100% - 10px);
+            top: 40px;
+            left: 5px;
+            font-size: 14px;
+            margin: 0;
+            z-index: 2;
+
+            &.withEvent {
+              color: $primary-white
+            }
+          }
+
+          & > .dateImg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            z-index: 1;
+            object-fit: cover;
+          }
+
+          .imageCover {
+            position: absolute;
+            background: #000;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            opacity: 0.3;
+            z-index: 1;
+          }
+
+          & > .pointers {
+            position: absolute;
+            padding: 5px;
+            width: 100%;
+            height: 19px;
+            left: 0px;
+            bottom: 0px;
+            z-index: 2;
+
+            & > .point {
+              width: 10%;
+              min-height: 8px;
+              margin-right: 2px;
+              display: inline-flex;
+              border-radius: 50%;
+              background-color: transparent;
+              border: 1px solid darken($light-gray, 25%);
+
+              &:before{
+                content: "";
+                display: block;
+                padding-top: 100%;
+              }
+
+              &.related {
+                background-color: $primary-white;
+              }
+
+              &.withEvent {
+                border-color: $primary-white;
+              }
+            }
+
+            & > .plusPoint {
+              font-size: 9px;
+              display: inline-flex;
+
+              &.related {
+                background-color: $primary-white;
+              }
+
+              &.withEvent {
+                border-color: $primary-white;
+              }
+            }
+          }
+
+          &.currentDate {
+            background-color: darken($light-gray, 1%);
+          }
+
+          &.otherMonth {
+            border-color: darken($light-gray, 5%);
+            color: darken($light-gray, 5%);
+          }
+
+          &.pastDate {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
+
+  & > .footer {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+    width: 100%;
+    height: 15px;
+
+    & button {
+      width: 30px;
+      height: 30px;
+      position: relative;
+      background-color: $brand-danger;
+      color: $primary-white;
+      z-index: 5;
+    }
+  }
+}
+
+.buttons {
+  position: absolute;
+  right: 8px;
+
+  .remove {
+    margin-left: 5px;
+  }
+
+  .shareButton {
+    position: relative;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-left: 5px;
+    color: $primary-white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 15px;
+
+    & > i {
+      position: absolute;
+      top: 4px;
+      left: 7px;
+
+      &::before {
+        vertical-align: middle;
+      }
+    }
+
+    &.copyLink {
+      background-color: $text-color;
+      cursor: pointer;
+
+      &.activated {
+        background-color: $brand-success;
+      }
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.calendarIsOpen {
+  border-left: none;
+  border-top: none;
+  border-right: none;
+}
+
+@media screen and (max-width: $screen-sm-min) {
+  .root {
+    margin-top: -15px;
+    transition: 0.25s easy;
+  }
+
+  .calendarIsOpen {
+    margin-top: -8px !important;
+    transition: 0.25s easy;
+  }
+}

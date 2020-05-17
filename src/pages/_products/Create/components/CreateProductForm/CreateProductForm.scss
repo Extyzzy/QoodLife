@@ -1,0 +1,17 @@
+@import '../../../../../styles/app';
+
+.editText {
+  position: relative;
+}
+
+.containnerEditText {
+  padding-bottom: 55px;
+}
+
+.button {
+  text-align: right;
+}
+
+.required {
+  color: $brand-danger;
+}

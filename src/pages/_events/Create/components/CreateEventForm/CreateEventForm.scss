@@ -1,0 +1,72 @@
+@import '../../../../../styles/app';
+
+.root {
+  //
+}
+
+.editText {
+  position: relative;
+}
+
+.mapInput {
+  height: 400px;
+}
+
+.button {
+  text-align: right;
+}
+
+.required {
+  color: $brand-danger;
+}
+
+.timeRangeContainer {
+  display: flex;
+
+  .clockDirection {
+    padding-top: 7px;
+    margin-left: 7px;
+  }
+
+  .clockContainer {
+    position: relative;
+    margin-left: 7px;
+
+    i {
+      position: absolute;
+      top: 5px;
+      font-size: 18px;
+    }
+
+    .clock {
+      width: 60px !important;
+      padding: 0 7px !important;
+      margin-left: 25px;
+    }
+  }
+}
+
+.daysOfWeekOptions {
+  display: flex;
+
+  & > div {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #e8e8e8;
+    text-align: center;
+    line-height: 40px;
+    color: grey;
+    cursor: pointer;
+    margin-right: 5px;
+    font-size: 12px;
+  }
+
+  .redColor {
+    color: $brand-danger !important;
+  }
+
+
+  .selectedDay {
+    background-color: #e8e8e8;
+  }
+}

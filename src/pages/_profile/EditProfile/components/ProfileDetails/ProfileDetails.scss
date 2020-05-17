@@ -1,0 +1,235 @@
+@import '../../../../../styles/app';
+
+.root {
+  position: relative;
+  margin-bottom: 20px;
+  padding-bottom: 50px;
+
+  .description {
+    margin: 20px 0;
+  }
+
+  & > .options {
+    display: flex;
+    width: 100%;
+
+    &.mobile {
+      flex-direction: column;
+    }
+
+    & > .avatar {
+      display: inline-flex;
+      width: 200px;
+      height: 200px;
+      margin: 0 0 10px;
+
+      & > i, div i {
+        font-size: 100px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        width: 200px;
+        height: 200px;
+        border: 1px solid darken($light-gray, 5%);
+        color: $light-gray;
+      }
+
+      & > img {
+        display: flex;
+        width: 200px;
+        height: 200px;
+        margin-right: 20px;
+        object-fit: cover;
+      }
+    }
+
+    & > .profileDetails {
+      display: inline-flex;
+      flex-direction: column;
+      width: 100%;
+      min-height: 210px;
+      padding: 0 10px;
+
+      .required {
+        color: $brand-danger;
+      }
+
+      & > div {
+        flex-direction: column;
+      }
+
+      & > .userName {
+        margin: 0;
+        font-size: 23px;
+      }
+
+      & > .datePickerContainer {
+        & > div {
+          display: flex;
+        }
+      }
+
+      & > .detaildsField,
+      .detaildsField div {
+        & > i {
+          display: inline-flex;
+          padding: 3px 7px 4px 0;
+          font-size: 18px;
+        }
+
+        & > a {
+          display: flex;
+        }
+
+        & > p {
+          display: inline-flex;
+          font-size: 18px;
+        }
+      }
+    }
+
+    & > .gallery {
+      display: inline-flex;
+      width: 100%;
+
+      & > img{
+        display: inline-flex;
+        width: calc(100% / 3 - 4px);
+        margin: 2px;
+        height: 190px;
+      }
+    }
+
+    &.mobile {
+      & > .avatar {
+        display: flex;
+        margin: 0 auto;
+      }
+
+      & > .profileDetails {
+        display: flex;
+        width: 100%;
+        min-height: 150px;
+        text-align: left;
+
+        & div > label {
+          padding-top: 15px;
+          width: 100%;
+        }
+
+        &.view {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  & > .editMode {
+    display: inline-flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    button {
+      margin-left: 0;
+    }
+  }
+}
+
+.changePassword {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 13px;
+}
+
+.textarea {
+  display: flex;
+  resize: vertical;
+  min-height: 50px;
+  max-height: 500px;
+}
+
+.addPhotoZone {
+  width: 200px;
+  height: 200px;
+  margin: 5px 0;
+  position: absolute;
+  cursor: pointer;
+
+  & > i {
+    font-size: 100px;
+    padding: 40px 28px;
+    display: flex;
+    width: 200px;
+    height: 200px;
+    border: 1px solid darken($light-gray, 5%);
+    color: $light-gray;
+  }
+}
+
+.formFooter {
+  text-align: right;
+  padding: 0 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid grey;
+}
+
+.formContainer {
+  width: 100%;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.questionProf {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 3;
+}
+
+.buttons {
+  display: flex;
+
+  .edit {
+    margin-top: 2px;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+.activate {
+  background-color: transparent;
+  border: 1px solid $brand-success;
+  padding: 5px 10px;
+  border-radius: 25px;
+  outline: 0 !important;
+  touch-action: none;
+  margin-right: 5px;
+
+  &:hover {
+    background-color: $brand-success;
+    color: white;
+  }
+}
+
+.active {
+  background-color: $brand-success;
+  color: white;
+}
+
+.soon {
+  position: absolute;
+  bottom: -10px;
+  color: $brand-success;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+}
+
+.confirm {
+  color: $brand-danger;
+}

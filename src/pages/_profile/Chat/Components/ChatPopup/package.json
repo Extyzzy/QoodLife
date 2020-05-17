@@ -1,0 +1,6 @@
+{
+  "name": "ChatPopup",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./Container.js"
+}

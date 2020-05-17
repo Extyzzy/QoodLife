@@ -1,0 +1,6 @@
+{
+  "name": "BrainTreeDropIn",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./BrainTreeDropIn.js"
+}

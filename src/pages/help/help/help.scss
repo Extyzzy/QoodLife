@@ -1,0 +1,40 @@
+@import '../../../styles/app';
+
+.root {
+
+  h1 {
+    text-align: center;
+  }
+
+  .video {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 0;
+    height: 0;
+    overflow: hidden;
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .name {
+    background-color: white;
+    width: 860px;
+    margin-left: 180px;
+    padding: 10px;
+  }
+
+  .mobile {
+    background-color: white;
+    padding: 10px;
+  }
+
+  span {
+    font-weight: bold;
+    font-size: 20px;
+  }
+}

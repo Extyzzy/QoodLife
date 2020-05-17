@@ -1,0 +1,20 @@
+@import '../../styles/app';
+
+.modalRoot {
+  min-height: 360px;
+  padding: 10px;
+  background-color: $primary-white;
+}
+
+.invoiceForm {
+  display: none;
+  flex-direction: column;
+
+  &.showDropin {
+    display: flex;
+  }
+}
+
+.required {
+  color: $brand-danger;
+}

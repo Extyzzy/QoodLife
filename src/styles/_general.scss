@@ -1,0 +1,42 @@
+@import './variables';
+
+html {
+  font-weight: 100;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+html,
+body,
+.app {
+  height: 100%;
+  font-family: $font-family-base;
+}
+
+a {
+  cursor: pointer;
+  transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+}
+
+img {
+  border-radius: 2px;
+}
+
+th {
+  font-weight: 600;
+}
+
+label {
+  font-weight: 600;
+}
+
+.pac-logo:after {
+  display: none !important;
+  background-image: none;
+}

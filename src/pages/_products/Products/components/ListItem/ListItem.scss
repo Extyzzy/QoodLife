@@ -1,0 +1,227 @@
+@import '../../../../../styles/app';
+
+.root {
+  position: relative;
+
+  &.list {
+    width: 100%;
+    border-bottom: 1px solid $light-gray;
+    padding: 10px 0;
+    margin-bottom: 5px;
+
+    .image {
+      display: inline-block;
+      vertical-align: top;
+      text-align: center;
+      width: 240px;
+      height: 160px;
+      background-color: #f7f7f7;
+
+      & > span > img {
+        height: 100%;
+        cursor: pointer;
+        object-fit: contain;
+      }
+    }
+
+    .content {
+      display: inline-block;
+      vertical-align: top;
+      width: calc(100% - 240px);
+      padding-left: 15px;
+      position: relative;
+
+      & > .title {
+        color: $text-color;
+        display: inline-flex;
+        width: 100%;
+        font-size: 20px;
+        padding-left: 5px;
+        font-weight: normal;
+        margin-bottom: 5px;
+        border-bottom: 1px solid transparent;
+
+        &:hover {
+          color: $brand-success;
+          border-bottom: 1px solid $brand-success;
+          width: 570px;
+        }
+      }
+
+      & > .details {
+        display: flex;
+
+        & > .product {
+          width: 50%;
+          min-height: 120px;
+          border-right: 1px solid darken($light-gray, 5%);
+          padding: 5px;
+
+          & > .brand {
+            font-size: 17px;
+            width: 100%;
+          }
+
+          & > .type {
+            width: 100%;
+            font-weight: 600;
+            font-size: 17px;
+          }
+
+          & > .description {
+            position: relative;
+            font-size: 15px;
+            padding: 0;
+            width: 100%;
+            height: 4em;
+            overflow: hidden;
+
+            & p,
+            i {
+              display: inline;
+            }
+
+            &:after {
+              content: '';
+              text-align: right;
+              position: absolute;
+              bottom: 0;
+              right: 0;
+              width: 70%;
+              height: 1.2em;
+            }
+          }
+
+          @supports (-webkit-line-clamp: 5) {
+            & > .description {
+              display: -webkit-box;
+              -webkit-line-clamp: 5;
+              -webkit-box-orient: vertical;
+              max-height: 12em;
+              height: auto;
+
+              &:after {
+                display: none;
+              }
+            }
+          }
+        }
+
+        & > .contacts {
+          width: 50%;
+          min-height: 120px;
+          padding: 5px;
+
+          & > div {
+            padding-left: 10px;
+
+            & > i {
+              width: 20px;
+              height: 17px;
+              display: inline-block;
+              position: relative;
+              vertical-align: top;
+              font-size: 15px;
+
+              &::before {
+                position: absolute;
+                top: 3px;
+              }
+            }
+          }
+
+          & > .website,
+          .phone,
+          .email,
+          .fullname,
+          .location {
+            display: inline-block;
+            width: calc(100% - 20px);
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+          }
+        }
+      }
+
+      .footer {
+        position: absolute;
+        bottom: -10px;
+        right: 0;
+
+        .actionButtons {
+          height: 25px;
+          flex-direction: row-reverse;
+          display: none;
+        }
+
+        .lastSeen {
+          text-align: right;
+          color: $brand-danger;
+        }
+      }
+    }
+  }
+
+  &.icons {
+    display: table-cell;
+    width: calc(100% / 3);
+    position: relative;
+    padding: 0 10px 10px;
+    margin-bottom: 15px;
+
+    .image {
+      background-color: #f7f7f7;
+    }
+
+    &:hover {
+      .actionButtons {
+        display: block;
+      }
+    }
+
+    .name:hover {
+      color: $brand-success;
+      border-bottom: 1px solid $brand-success;
+    }
+
+    .image {
+      height: 160px;
+      display: flex;
+      justify-content: center;
+
+      & > span > img {
+        height: 100%;
+        cursor: pointer;
+        object-fit: contain;
+      }
+    }
+
+    .actionButtons {
+      display: none;
+      position: absolute;
+      height: 25px;
+      top: 120px;
+      right: 25px;
+    }
+  }
+}
+
+.name {
+  color: $text-color;
+
+  :hover {
+    color: $brand-success;
+    border-bottom: 1px solid $brand-success;
+  }
+}
+
+.public {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.root {
+  &.list:hover .actionButtons {
+    display: flex !important;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "GalleryInput",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./GalleryInput.js"
+}

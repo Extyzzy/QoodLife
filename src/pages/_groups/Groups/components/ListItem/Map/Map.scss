@@ -1,0 +1,93 @@
+@import '../../../../../../styles/app';
+
+.title {
+  font-size: 14px;
+  text-align: center;
+  padding: 8px;
+  height: 45px;
+  overflow: hidden;
+}
+
+.container {
+  background-color: $primary-white;
+  width: 250px;
+  height: 220px;
+  margin-left: -124px;
+  cursor: pointer;
+  font-family: $font-family-base;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 1px 6px;
+}
+
+.image {
+  position: relative;
+  img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+  }
+}
+
+.dayEvent {
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 170px;
+  background-color: rgba(24, 31, 25, 0.6);
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 16px;
+  padding-top: 10px;
+  font-weight: 300;
+
+  .day {
+    font-size: 30px;
+    font-weight: 600;
+    margin: -5px 0;
+  }
+
+  .category {
+    text-transform: capitalize;
+    font-size: 14px;
+    padding: 3px;
+    line-height: 1.45em;
+  }
+}
+
+.triangle {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  cursor: default;
+
+  .left {
+    width: 16px;
+    height: 30px;
+    overflow: hidden;
+
+    .leftInner {
+      background-color: #fff;
+      transform: skewX(22.6deg);
+      transform-origin: 0 -15px 0;
+      height: 24px;
+      width: 10px;
+      box-shadow: rgba(0, 0, 0, 0.2) 0 1px 6px;
+    }
+  }
+
+  .right {
+    width: 16px;
+    height: 30px;
+    overflow: hidden;
+
+    .rightInner {
+      background-color: #fff;
+      transform: skewX(-22.6deg);
+      transform-origin: 10px 0 0;
+      height: 24px;
+      width: 10px;
+      box-shadow: rgba(0, 0, 0, 0.2) 0 1px 6px;
+    }
+  }
+}

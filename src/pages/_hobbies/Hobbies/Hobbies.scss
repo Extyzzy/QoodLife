@@ -1,0 +1,157 @@
+@import '../../../styles/app';
+
+.root {
+  padding: 15px 0;
+
+  & > .nav {
+    display: flex;
+    align-items: center;
+
+    & > .title {
+      padding-left: 15px;
+      font-size: 18px;
+      margin: 0;
+    }
+
+    h1, h2 {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0;
+      display: inline-flex;
+    }
+
+    .containnerTree {
+      display: inline-flex;
+    }
+
+    .tree {
+      font-size: 15px;
+      margin: 0 15px;
+      height: 18px;
+    }
+  }
+}
+
+.hobbiesList {
+  display: flex;
+  flex-wrap: wrap;
+
+  & > .listItem {
+    display: table-cell;
+    width: 392px;
+    position: relative;
+    margin: 14px;
+    cursor: pointer;
+
+    .buttonContainer {
+      display: none;
+      position: absolute;
+      top: 25px;
+      left: 25px;
+      z-index: 10;
+
+      & > button {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        background-color: transparent;
+        border: solid 1px $brand-danger;
+        color: $brand-danger;
+        outline: none;
+
+        & > i::before {
+          position: relative;
+          top: 3px;
+          font-size: 20px;
+        }
+
+        & > svg {
+          font-size: 20px;
+        }
+
+        &:hover {
+          background-color: $brand-danger;
+          color: $primary-white;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+    }
+
+    & > .title {
+      display: table;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 9;
+      padding: 15px;
+      width: 100%;
+      height: 100%;
+      color: $primary-white;
+      font-size: 42px;
+      text-align: center;
+
+      & > span {
+        display: table-cell;
+        vertical-align: middle;
+        line-height: 1.25em;
+      }
+
+      & button {
+        width: 150px;
+        display: none;
+        position: absolute;
+        left: calc(50% - 75px);
+        bottom: 15px;
+      }
+    }
+
+    & > img {
+      width: 392px;
+      height: 200px;
+      cursor: pointer;
+      filter: brightness(75%);
+    }
+
+    &:hover {
+      & > img {
+        filter: brightness(50%);
+      }
+
+        .buttonContainer, .browseHobbyButton {
+          display: inline-block;
+      }
+    }
+  }
+}
+
+.linkTree {
+    cursor: pointer;
+    display: inline-block;
+
+    &:hover {
+      color: $brand-danger;
+    }
+}
+
+.link {
+  cursor: pointer;
+  display: inline-block;
+
+  &:hover {
+    color: $brand-danger;
+  }
+}
+
+.active {
+  & > button {
+      background-color: $brand-danger !important;
+      color: $primary-white !important;
+      border-radius: 25px;
+  }
+}

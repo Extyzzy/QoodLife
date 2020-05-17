@@ -1,0 +1,92 @@
+@import '../../styles/app';
+
+.root {
+  .tabsList {
+    border-bottom: 2px solid $brand-success;
+    margin-bottom: 10px;
+    display: flex;
+
+    .add {
+      padding: 6px 5px;
+      position: relative;
+      cursor: pointer;
+
+      &:hover {
+        .redirect {
+          display: block;
+        }
+
+        span {
+          opacity: 1;
+        }
+      }
+
+      span {
+        font-size: 12px;
+        margin-left: 7px;
+        opacity: 0.8;
+      }
+    }
+
+    .redirect {
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      position: absolute;
+      top: 30px;
+      right: -60px;
+      background-color: white;
+      z-index: 9;
+      transition: all 500ms ease;
+
+      &:hover {
+        display: block;
+      }
+
+      & > div {
+        padding: 10px 20px;
+
+        &:hover {
+          transition: all 500ms ease;
+          background-color: $brand-success;
+          color: white;
+          border-radius: 6px;
+        }
+      }
+    }
+
+    .tab {
+      display: inline-block;
+      text-align: center;
+      padding: 5px 10px;
+      min-width: 100px;
+      text-decoration: none;
+      color: $text-color;
+      font-size: 18px;
+      position: relative;
+
+      & > .notificationPoint {
+        position: absolute;
+        top: 4px;
+        right: 3px;
+        background: $brand-danger;
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        font-size: 11px;
+        color: $primary-white;
+      }
+
+      &.mobile {
+        font-size: 14px;
+        width: calc(100% / 3);
+      }
+
+      &.active {
+        background-color: $brand-success;
+        color: $primary-white;
+      }
+    }
+  }
+}

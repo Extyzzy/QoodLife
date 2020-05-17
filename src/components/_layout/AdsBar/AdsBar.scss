@@ -1,0 +1,21 @@
+@import '../../../styles/app';
+
+.root {
+  position: relative;
+  padding-left: 10px;
+  width: 215px;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.addDiv {
+  margin-top: 10px;
+  color: $text-color;
+}
+
+.addImage {
+  width: 205px;
+  height: 160px;
+  object-fit: contain;
+  background-color: $primary-white;
+}

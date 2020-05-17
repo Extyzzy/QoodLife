@@ -1,0 +1,31 @@
+@import '../../../../../styles/app';
+
+.root {
+  //
+}
+
+.editText {
+  position: relative;
+}
+
+.containnerEditText {
+  padding-bottom: 55px;
+}
+
+.description {
+  width: 100%;
+  resize: vertical;
+  min-height: 75px;
+}
+
+.mapInput {
+  height: 400px;
+}
+
+.button {
+  text-align: right;
+}
+
+.required {
+  color: $brand-danger;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "PlacesPopupContent",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./PopupContentContainer.js"
+}

@@ -1,0 +1,376 @@
+@import '../../../../../styles/app';
+
+.root {
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  margin-top: 50px;
+  position: relative;
+
+  &.mobile {
+    margin-top: 0;
+  }
+
+  &.list {
+    padding-bottom: 10px;
+    padding-top: 35px;
+    margin-bottom: 15px;
+
+    .eventBlock {
+      background-color: $primary-white;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+
+      .date {
+        display: inline-block;
+        vertical-align: top;
+        text-align: center;
+        width: 100px;
+        padding-top: 20px;
+        padding-right: 10px;
+
+        &.mobile {
+          width: 80px;
+        }
+
+        & > .dayOfWeek {
+          font-size: 16px;
+          text-transform: uppercase;
+        }
+
+        & > .day {
+          font-size: 50px;
+          line-height: 44px;
+          font-weight: 700;
+        }
+
+        & > .month {
+          font-size: 16px;
+          text-transform: uppercase;
+        }
+      }
+
+      .image {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        width: 240px;
+        height: 180px;
+
+        &.mobile {
+          padding: 5px;
+          width: calc(100% - 80px);
+          height: 180px;
+        }
+
+        & > img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          cursor: pointer;
+        }
+      }
+
+      .details {
+        display: inline-block;
+        vertical-align: top;
+        width: calc(100% - 350px);
+        min-height: 180px;
+        padding-left: 15px;
+        position: relative;
+
+        &.mobile {
+          width: 100%;
+        }
+
+        & > .title {
+          font-size: 20px;
+          margin: 5px 0;
+        }
+
+        & > .detailsRow {
+          display: inline-flex;
+          flex-direction: row;
+          width: 100%;
+          font-size: 15px;
+
+          i {
+            margin-right: 5px;
+            font-size: 15px;
+
+            &::before {
+              position: relative;
+              top: 2px;
+            }
+          }
+
+          & > .description {
+            display: inline-flex;
+            position: relative;
+            margin-bottom: 20px;
+            font-size: 15px;
+            padding: 0;
+            width: 100%;
+            height: 46px;
+            overflow: hidden;
+
+            &:after {
+              content: "";
+              text-align: right;
+              position: absolute;
+              bottom: 0;
+              right: 0;
+              width: 70%;
+              height: 1.2em;
+            }
+          }
+
+          @supports (-webkit-line-clamp: 2) {
+            & > .description {
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+
+              &:after {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .groupsList {
+      display: block;
+      width: 100%;
+      min-height: 50px;
+      padding: 5px;
+      margin-top: 10px;
+    }
+  }
+
+  & > .title {
+    color: $primary-white;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  & > .poster {
+    position: relative;
+    margin-bottom: 15px;
+    background-color: $primary-white;
+
+    & > .image {
+      & > img {
+        width: 100%;
+        height: 500px;
+        object-fit: contain;
+      }
+    }
+
+    & > .date {
+      display: inline-block;
+      vertical-align: top;
+      text-align: center;
+      width: 125px;
+      height: 200px;
+      padding-top: 20px;
+      background-color: rgba(24, 31, 25, 0.6);
+      position: absolute;
+      bottom: 0;
+
+      & > .dayOfWeek {
+        text-transform: uppercase;
+        color: $primary-white;
+      }
+
+      & > .day {
+        font-size: 56px;
+        line-height: 44px;
+        font-weight: 700;
+        color: $primary-white;
+      }
+
+      & > .month {
+        text-transform: uppercase;
+        color: $primary-white;
+      }
+
+      & > .hobbies {
+        font-size: 13px;
+        margin-top: 5px;
+        color: $primary-white;
+        padding: 0 14px;
+      }
+    }
+  }
+
+  & > .controls {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    margin-bottom: 10px;
+
+    .hidden {
+      opacity: 0;
+      cursor: context-menu;
+    }
+
+    & > .actionButtons {
+      .groupsButtonAdd {
+        position: relative;
+        font-weight: 600;
+        text-decoration: none;
+        height: 32px;
+        line-height: 32px;
+        text-align: center;
+        border: 1px solid $brand-danger;
+        color: $brand-danger;
+        border-radius: 25px;
+        transition: ease 0.5s;
+        cursor: pointer;
+        padding: 0 15px;
+        background-color: transparent;
+
+          &:hover {
+            background-color: $brand-danger;
+            color: $primary-white;
+          }
+      }
+    }
+
+    & > .shares {
+      flex-grow: 1;
+      color: $primary-white;
+      font-weight: 600;
+      text-align: right;
+      line-height: 32px;
+
+      & > a {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        margin-left: 5px;
+        color: $primary-white;
+        text-decoration: none;
+        text-align: center;
+        font-size: 20px;
+
+        & > i::before {
+          vertical-align: middle;
+        }
+      }
+
+      & > .facebook {
+        background-color: $facebook-brand;
+      }
+
+      & > .twitter {
+        background-color: $twitter-brand;
+      }
+
+      & > .mail {
+        background-color: $mail-brand;
+
+        & > i::before {
+          position: relative;
+          top: -1px;
+        }
+      }
+    }
+  }
+
+  & > .details {
+    position: relative;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: $primary-white;
+    display: flex;
+
+    & > .contacts {
+      flex: 50%;
+      padding: 5px 10px 5px 5px;
+
+      & > div > i {
+        margin-right: 5px;
+
+        &::before {
+          position: relative;
+          top: 2px;
+        }
+      }
+
+      & > .ownerDetails {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 10px;
+        height: 40px;
+
+        & img, i {
+          display: inline-flex;
+          width: 40px;
+          height: 40px;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+
+        & i {
+          align-items: center;
+          justify-content: center;
+          font-size: 25px;
+          border: 1px solid darken($light-gray, 5%);
+
+          &::before {
+            top: -2px;
+          }
+        }
+
+
+        & > .aside {
+          display: inline-flex;
+          flex-direction: column;
+          margin-left: 10px;
+
+          & h4 {
+            margin: 0;
+          }
+
+          & a {
+            color: $brand-danger;
+          }
+        }
+      }
+    }
+
+    & > .description {
+      flex: 50%;
+      padding: 5px 5px 5px 10px;
+      border-left: 1px solid darken($light-gray, 5%);
+      -webkit-line-clamp: 7;
+      -webkit-box-orient: vertical;
+      height: 160px;
+      overflow: hidden;
+      display: -webkit-box;
+    }
+  }
+}
+
+.ticketURL {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+
+  &:hover {
+    background-color: white;
+    border: 1px solid $text-color;
+    color: $text-color;
+  }
+}
+
+@media (min-width: 780px) and (max-width: 1350px ) {
+  .root {
+    right: 92px;
+  }
+}

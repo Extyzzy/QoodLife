@@ -1,0 +1,340 @@
+@import '../../../../../styles/app';
+
+.root {
+  width: 100%;
+  padding: 15px;
+  background-color: $primary-white;
+
+  & > .searchInput {
+    position: relative;
+    height: 5vh;
+    width: 100%;
+    border-bottom: 1px solid gainsboro;
+    
+
+    & h4 {
+      font-weight: bold;
+    }
+
+    &.mobile {
+      &::before {
+        left: 10px;
+      }
+
+      & > input {
+        width: 75%;
+        padding-bottom: 23px;
+      }
+    }
+
+    & label {
+      display: inline-flex;
+      width: 20%;
+      font-weight: 400;
+      padding: 5px;
+    }
+
+    &::after {
+      font-family: 'qood-life';
+      content: 'o';
+      position: absolute;
+      color: black;
+      font-weight: bold;
+      font-size: 16px;
+      z-index: 3;
+      top: 6px;
+      left: calc(20% + 10px);
+      opacity: 0.6;
+    }
+
+    & > input {
+      width: 80%;
+      border: solid 1.4px gainsboro;
+      font-size: 18px;
+      line-height: 22px;
+      padding: 7px 10px 5px 30px;
+      height: 32px;
+      border-radius: 15px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  & > .searchInputMobile {
+    position: relative;
+    height: 10vh;
+    width: 100%;
+    margin-bottom: 10px;
+    border-bottom: 1px solid gainsboro;
+    
+
+    & h4 {
+      font-weight: bold;
+      margin-top: -5px;
+    }
+
+    &.mobile {
+      &::before {
+        left: 10px;
+      }
+
+      & > input {
+        width: 75%;
+        padding-bottom: 23px;
+      }
+    }
+
+    & label {
+      position: relative;
+      top: -10px;
+      display: inline-flex;
+      width: 20%;
+      font-weight: 400;
+    }
+
+    &::after {
+      font-family: 'qood-life';
+      content: 'o';
+      position: absolute;
+      color: black;
+      font-weight: bold;
+      font-size: 16px;
+      z-index: 3;
+      top: 39px;
+      left: calc(20% + 10px);
+      opacity: 0.6;
+    }
+
+    & > input {
+      width: 80%;
+      border: solid 1.4px gainsboro;
+      font-size: 18px;
+      line-height: 22px;
+      padding: 7px 10px 5px 30px;
+      height: 32px;
+      border-radius: 15px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  & > .messagesList {
+    display: flex;
+    flex-direction: column;
+
+
+    &.mobile {
+      height: 61vh;
+      overflow-y: scroll;
+    }
+
+    & > .startConversationHint {
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+      color: $brand-danger;
+    }
+
+    & > .listitem {
+      flex-direction: column;
+      padding: 0 25px 10px;
+
+      & > .autor {
+        height: 52px;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+
+        & .avatarIcon {
+          width: 45px;
+          height: 45px;
+          font-size: 29px;
+          color: $text-color;
+          padding: 5px 8px;
+          border-radius: 50%;
+          border: 1px solid darken($light-gray, 5%);
+        }
+
+        & a {
+          display: inline-flex;
+          text-decoration: none;
+          align-items: center;
+
+          & img {
+            width: 45px;
+            height: 45px;
+            padding: 3px;
+            display: inline-flex;
+            border-radius: 50%;
+            border: 1px solid darken($light-gray, 5%);
+            object-fit: cover;
+          }
+
+          & .avatarIcon {
+            width: 45px;
+            height: 45px;
+            font-size: 29px;
+            color: $text-color;
+            padding: 5px 8px;
+            border-radius: 50%;
+            border: 1px solid darken($light-gray, 5%);
+          }
+        }
+
+        & > .autorName {
+          display: inline-flex;
+          align-items: center;
+          padding: 5px;
+          font-size: 20px;
+        }
+      }
+
+      & > .content {
+        min-height: 50px;
+        margin-left: 50px;
+        padding: 5px;
+        border-radius: 2px;
+        border: 1px solid darken($light-gray, 5%);
+        background-color: $primary-white;
+
+        &.self {
+          background-color: darken($light-gray, 1%);
+
+          & > .footer > .createdAt {
+            color: $primary-white;
+          }
+        }
+
+        & > .footer {
+          height: 30px;
+          padding: 5px 0;
+          display: flex;
+          justify-content: space-between;
+
+          & > .createdAt {
+            color: darken($light-gray, 5%);
+          }
+
+          & > .controls {
+            width: 48px;
+
+            & > button, span {
+              margin: 0 2px;
+              width: 20px;
+              height: 20px;
+              color: $brand-danger;
+              cursor: pointer;
+
+              &::before {
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    & > .typingWarning {
+      padding: 20px 25px;
+    }
+
+    & > .loadMoreButton {
+      display: flex;
+      align-self: center;
+      border: none;
+      justify-content: center;
+      height: 25px;
+      width: 85px;
+      padding: 0;
+      border-bottom: 1px solid darken($light-gray, 5%);
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+.chatDescription {
+  display: flex;
+  background-color: greenyellow;
+}
+
+.writeMessage{
+  position: relative;
+  display: flex;
+  padding: 5px 5px 0;
+  flex-direction: column;
+  background-color: darken($light-gray, 1%);
+
+  &.reply {
+    height: 30px;
+
+    & > .inputMessage {
+      height: 30px;
+    }
+  }
+
+  & > .top{
+    display: inline-flex;
+    flex-direction: row;
+
+    & > .userImage {
+      display: inline-flex;
+      text-decoration: none;
+      align-items: center;
+      width: 60px;
+      padding: 0 0 3px 9px;
+
+      & img {
+        width: 45px;
+        height: 45px;
+        padding: 3px;
+        display: inline-flex;
+        border-radius: 50%;
+        object-fit: cover;
+        background-color: $primary-white;
+        border: 1px solid darken($light-gray, 10%);
+        align-self: flex-start;
+      }
+
+      & .avatarIcon {
+        width: 45px;
+        height: 45px;
+        font-size: 29px;
+        color: $text-color;
+        padding: 5px 8px;
+        border-radius: 50%;
+        border: 1px solid darken($light-gray, 10%);
+        align-self: flex-start;
+      }
+    }
+
+    & > .inputMessage {
+      display: inline-flex;
+      background-color: $primary-white;
+      width: 100%;
+      resize: none;
+      height: 100px;
+      padding: 2px 5px;
+      border: 1px solid darken($light-gray, 5%);
+      border-radius: 2px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  & > .submitWritedMess {
+    display: inline-flex;
+    max-width: 150px;
+    margin: 10px;
+    align-self: center;
+  }
+}

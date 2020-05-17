@@ -1,0 +1,6 @@
+{
+  "name": "Agent",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./AgentContainer.js"
+}

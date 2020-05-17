@@ -1,0 +1,165 @@
+@import '../../styles/app';
+
+.childFormContainer {
+  width: 100%;
+  display: inline-block;
+  padding: 15px 25px;
+  background: $primary-white;
+  margin-top: 10px;
+
+  & > .closeForm {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0px 5px;
+
+    & button {
+      border: none;
+      width: 25px;
+      height: 25px;
+      font-size: 25px;
+      vertical-align: top;
+      padding: 0;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  & > .formFooter {
+    display: inline-flex;
+    justify-content: flex-end;
+
+    & > .submitButton {
+      position: relative;
+      top: 8px;
+    }
+  }
+
+  @media (max-width: $screen-sm-min) {
+    & .placesMobile {
+      position: relative;
+      right: 180px;
+      width: 330px !important;
+      top: 30px;
+      z-index: 99;
+    }
+  }
+
+  .editorMobile {
+    position: relative;
+    top: 25px;
+    right: 178px;
+  }
+}
+
+.galleryMobile {
+  position: relative;
+  right: 180px;
+  top: 32px;
+  z-index: 99;
+}
+
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  min-height: 30px;
+  padding: 3px 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-spacing: 0;
+  border-collapse: separate;
+
+  .linkslist {
+    white-space: nowrap;
+    width: 555px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  & > span {
+    display: inline-flex;
+    width: calc(100% - 44px);
+  }
+
+  &.mobile {
+    & > span {
+      width: 82%;
+    }
+  }
+}
+
+.toolbarEditor {
+  height: 150px;
+  line-height: 10px;
+}
+@media (max-width: $screen-sm-min) {
+  .toolbarEditor {
+    height: 80px;
+  }
+}
+
+.options {
+  width: 44px;
+  display: flex;
+  justify-content: flex-end;
+
+  & > .optionsItem {
+    display: inline-flex;
+    font-size: 18px;
+    text-align: center;
+    width: 22px;
+
+    &::before {
+      width: 18px;
+      height: 18px;
+      padding: 2px;
+      cursor: pointer;
+    }
+  }
+
+  &.mobile {
+    width: 18%;
+  }
+}
+
+.url {
+  margin-left: 172px;
+  margin-top: 10px;
+}
+
+.editText {
+  position: relative;
+  height: 270px;
+}
+
+.containnerEditText {
+  padding-bottom: 55px;
+}
+
+.required {
+  color: $brand-danger;
+}
+
+.popUpModifier {
+  padding-top: 20px;
+}
+
+.closeModal {
+  position: absolute;
+  font-size: 25px;
+  right: 45px;
+  top: -25px;
+  cursor: pointer;
+  background: transparent;
+  color: #ec6853;
+}
+
+.closeModalMobile {
+  position: absolute;
+  left: calc(100% - 20vw);
+  top: -45px;
+  font-size: 33px;
+  background: transparent;
+  color: #ec6853;
+}

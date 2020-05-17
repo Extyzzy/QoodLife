@@ -1,0 +1,14 @@
+@import '../../../../../styles/app';
+
+.root {
+  background-color: white;
+  padding: 25px;
+  position: absolute;
+  top: 35px;
+  width: 855px;
+
+  .required {
+    color: $brand-danger;
+  }
+}
+

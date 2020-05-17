@@ -1,0 +1,6 @@
+{
+  "name": "AdsBar",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./AdsBar.js"
+}

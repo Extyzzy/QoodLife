@@ -1,0 +1,104 @@
+@import '../../../styles/app';
+
+.root {
+  height: 100%;
+}
+
+.wrap {
+  min-height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+
+  & > nav,
+  & > nav > div,
+  & > main,
+  & > footer {
+    min-width: 1265px !important;
+  }
+
+  & > nav,
+  & > nav > div {
+    padding: 0;
+  }
+}
+
+.container {
+  min-height: 100%;
+  padding: #{$navbar-height + 10px} 0 ($content-padding-vertical + 60px);
+  background-color: $body-bg;
+}
+
+.sidebar {
+  vertical-align: top;
+  display: inline-block;
+  width: 185px;
+}
+
+.addbar {
+  vertical-align: top;
+  display: inline-block;
+  width: 185px;
+}
+
+.show {
+  display: none;
+}
+
+.active {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  background-color: $body-bg;
+}
+
+.withSidebar {
+  .content {
+    width: calc(100% - 410px);
+  }
+}
+
+.content {
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+}
+
+.contentBackground {
+  background-color: $primary-white;
+}
+
+@media screen and (max-width: $screen-sm-min) {
+  .wrap {
+    position: static;
+
+      & > nav,
+      & > nav > div,
+      & > main,
+      & > footer {
+        min-width: auto !important;
+        width: 100%;
+      }
+  }
+
+  .sidebar {
+    display: block;
+  }
+
+  .addbar {
+    display: block;
+  }
+
+  .withSidebar {
+    .content {
+      width: 100%;
+      margin-top: 8px;
+    }
+  }
+
+  .container {
+    padding: #{$navbar-height + 10px} 0 ($content-padding-vertical);
+  }
+}

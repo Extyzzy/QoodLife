@@ -1,0 +1,12 @@
+@import '../../../styles/app';
+
+.root {
+  padding: 15px;
+  min-height: 300px;
+  margin: 0 auto;
+
+  span {
+    font-weight: bold;
+    font-size: 20px;
+  }
+}

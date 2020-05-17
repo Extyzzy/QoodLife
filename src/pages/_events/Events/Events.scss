@@ -1,0 +1,45 @@
+@import '../../../styles/app';
+
+.root {
+  padding: 5px 15px 15px;
+}
+
+.filter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.header {
+  height: 45px;
+  .loader {
+    position: absolute;
+  }
+}
+
+.mapElement,
+.containerElement {
+  height: 100%;
+}
+
+.divMap {
+  height: 600px;
+}
+
+.viewModeSwitcher {
+  width: 75px;
+  display: inline-block;
+}
+
+@media screen and (max-width: $screen-sm-min) {
+  .root {
+    padding: 15px 0 15px;
+  }
+
+  .header {
+    height: 0;
+  }
+  .viewModeSwitcher {
+    width: 0;
+  }
+}

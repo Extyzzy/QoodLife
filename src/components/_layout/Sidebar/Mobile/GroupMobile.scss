@@ -1,0 +1,132 @@
+@import '../../../../styles/app';
+
+.root {
+  padding-top: 20px;
+  padding-right: 10px;
+  position: fixed;
+  width: 215px;
+
+  @media screen and (max-height: 600px), screen and (max-width: 1000px) {
+    & {
+      margin-top: 17px;
+      position: static;
+    }
+  }
+}
+
+.group {
+  & > a {
+    display: block;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    color: $text-color;
+    background-color: transparent;
+    border: 1px solid $text-color;
+    line-height: 30px;
+    padding: 0 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    position: relative;
+
+    &::after {
+      font-family: 'qood-life';
+      font-size: 15px;
+      content: 'A';
+      position: absolute;
+      right: 9px;
+      top: 2px;
+
+      @include transition(transform 0.4s);
+      @include rotate(90);
+    }
+  }
+
+  & .category {
+    cursor: pointer;
+
+    &:hover {
+      font-weight: 600;
+    }
+
+    &.active {
+      font-weight: 700;
+    }
+  }
+
+  &.open > a,
+  & > a:hover {
+    color: $primary-white;
+    background-color: $brand-success;
+    border-color: $brand-success;
+  }
+
+  &.open {
+    margin-bottom: 10px;
+
+    & > a {
+      &::after {
+        @include rotate(0);
+      }
+    }
+
+    & > ul {
+      display: block;
+    }
+  }
+}
+
+.hobby {
+  list-style: circle;
+  cursor: pointer;
+  margin-left: -20px;
+  padding: 3px 0;
+
+  &:hover {
+    font-weight: 600;
+  }
+
+  &.active {
+    font-weight: 700;
+    list-style: disc;
+  }
+}
+
+.subcategoryHobby {
+  list-style: none;
+  margin-left: -20px;
+}
+
+.scrollBars {
+  height: 300px;
+}
+
+.list {
+  list-style: none;
+  padding-left: 15px;
+}
+
+.contentHobby {
+  position: relative;
+  padding: 3px 0;
+
+  &::after {
+    font-family: 'qood-life';
+    font-size: 15px;
+    content: 'A';
+    position: absolute;
+    top: 2px;
+    right: 9px;
+    color: $primary-gray;
+
+    @include transition(transform 0.4s);
+    @include rotate(90);
+  }
+}
+
+.active {
+  &::after {
+    @include rotate(0);
+  }
+}

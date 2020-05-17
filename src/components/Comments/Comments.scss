@@ -1,0 +1,338 @@
+@import '../../styles/app';
+
+.root {
+  display: flex;
+  flex-direction: column;
+	margin-top: 20px;
+	min-height: 65px;
+	background-color: $primary-white;
+
+  & > .toggleComments {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 18px;
+
+    & button.mobile {
+      width: 125px;
+      font-size: 10px;
+    }
+
+    & h4 {
+      display: inline-flex;
+    }
+
+    & a {
+      display: inline-flex;
+      color: $brand-danger;
+      height: 30px;
+      margin: 2px 20px;
+      line-height: 30px;
+
+      &.mobile {
+        font-size: 10px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  & > .content {
+    display: inline-flex;
+    flex-direction: column;
+
+    & > .head {
+      display: block;
+      height: 20px;
+    }
+
+    & > .commentList {
+      margin: 10px 5px;
+      margin-right: 72px;
+    }
+
+    & > .loadMoreButton {
+      display: block;
+      height: 25px;
+      padding: 0;
+      text-align: center;
+      border-bottom: 1px solid darken($light-gray, 5%);
+      cursor: pointer;
+    }
+  }
+}
+
+.repliesDisplayButton {
+  border-bottom: 1px solid darken($light-gray, 5%);
+  cursor: pointer;
+
+  @include no-select();
+
+  &.cancel {
+    color: $brand-danger;
+  }
+}
+
+.cancelEdit {
+  display: block;
+  cursor: pointer;
+  color: $brand-danger;
+}
+
+.writeMessage{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  margin-top: 18px;
+  background-color: darken($light-gray, 2%);
+
+
+  & > .autorDetailsAndTextArea {
+    display: inline-flex;
+    flex-direction: row;
+    padding: 10px 18px;
+
+    & > .inputMessage {
+      display: inline-flex;
+      background-color: $primary-white;
+      width: 100%;
+      resize: none;
+      height: 120px;
+      padding: 2px 5px;
+      border: 1px solid darken($light-gray, 5%);
+      border-radius: 2px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    & > .avatar {
+      display: inline-flex;
+      margin-right: 10px;
+      cursor: pointer;
+
+      & > .image {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      & > i {
+        display: inline-flex;
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+        border: 1px solid darken($light-gray, 5%);
+        background-color: $primary-white;
+        font-size: 22px;
+        text-align: center;
+        padding: 3px 6px;
+      }
+    }
+  }
+
+  & > .submitWritedMess {
+    margin-bottom: 10px;
+    align-self: center;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      -webkit-box-shadow: inset -1px 1px 6px 0 rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: inset -1px 1px 6px 0 rgba(0, 0, 0, 0.3);
+      box-shadow: inset -1px 1px 6px 0 rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+
+.message {
+  display: flex;
+  flex-direction: column;
+  min-height: 50px;
+  margin: 23px 18px;
+  margin-bottom: 0;
+  padding: 5px;
+
+  & > .head {
+    & > .avatar {
+      display: inline-block;
+      margin-right: 2px;
+      cursor: pointer;
+
+      & > .image {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      & > i {
+        display: inline-block;
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+        border: 1px solid darken($light-gray, 5%);
+        background-color: $primary-white;
+        font-size: 22px;
+        text-align: center;
+        padding: 3px 6px;
+      }
+    }
+
+    & > .autorName {
+      display: inline-block;
+      vertical-align: top;
+      font-size: 18px;
+      height: 35px;
+      padding: 6px 0;
+    }
+  }
+
+  & > .content {
+    position: relative;
+    margin-left: 35px;
+    padding: 10px;
+    padding-bottom: 5px;
+    border-radius: 2px;
+    border: 1px solid darken($light-gray, 5%);
+    box-sizing: border-box;
+    background-color: $primary-white;
+
+    &:hover {
+      & > .ownerTools p {
+        display: flex;
+      }
+
+      & > .createdDate {
+        display: flex;
+      }
+    }
+
+    & > .createdDate {
+      position: absolute;
+      top: -25px;
+      right: 0;
+      display: none;
+      margin-left: 5px;
+      font-size: 16px;
+      color: darken($light-gray, 2%);
+    }
+
+    & > .ownerTools {
+      position: absolute;
+      right: -70px;
+      width: 70px;
+      height: 28px;
+      top: calc(50% - 14px);
+      display: flex;
+
+      & p {
+        align-self: flex-start;
+        display: none;
+        margin-left: 10px;
+      }
+
+      & > .controlers {
+        display: flex;
+        width: 70px;
+        height: 28px;
+      }
+    }
+
+    & > .messageOptions {
+      display: inline-flex;
+      justify-content: flex-end;
+      width: 100%;
+
+      & > .repliesData{
+        display: inline-block;
+        position: relative;
+        margin-left: 5px;
+        padding-right: 15px;
+        font-size: 12px;
+        color: darken($light-gray, 2%);
+        cursor: pointer;
+
+        &.arrow {
+          &::before {
+            position: absolute;
+            font-size: 8px;
+            top: 2px;
+            right: 0;
+            font-family: 'qood-life';
+            content: 'A';
+
+            @include rotate(-90);
+          }
+
+          &.openedReplies::before {
+              @include rotate(0);
+          }
+        }
+      }
+    }
+  }
+
+  & > .replies {
+    margin-left: 35px;
+    padding-left: 5px;
+    width: 100%;
+
+    & > .list > .listItem {
+      margin: 5px 0;
+
+      & > .head {
+        display: block;
+
+        & > .userAvatar {
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          margin-right: 5px;
+          object-fit: cover;
+        }
+
+        & > .userName {
+          display: inline-block;
+          font-size: 18px;
+        }
+      }
+
+      & > .content {
+        display: block;
+        margin-left: 40px;
+        margin-top: -5px;
+      }
+    }
+
+    & > .writeRepliy {
+      display: inline-block;
+      background-color: $primary-white;
+      width: 100%;
+      resize: none;
+      min-height: 25px;
+      padding: 2px 5px;
+      border: 1px solid darken($light-gray, 5%);
+      border-radius: 1px;
+      vertical-align: top;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    & > .loadMoreButton {
+      display: block;
+      height: 25px;
+      padding: 0;
+      text-align: center;
+      border-bottom: 1px solid darken($light-gray, 5%);
+      cursor: pointer;
+    }
+  }
+}

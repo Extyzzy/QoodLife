@@ -1,0 +1,6 @@
+{
+  "name": "CreateGroupButton",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./CreateGroupButton.js"
+}

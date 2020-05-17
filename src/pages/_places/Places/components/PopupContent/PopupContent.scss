@@ -1,0 +1,113 @@
+@import '../../../../../styles/app';
+
+.root {
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  margin-top: 50px;
+  position: relative;
+
+  & > .title {
+    color: $primary-white;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  & > .poster {
+    position: relative;
+    margin-bottom: 15px;
+
+    & > .image {
+      & > img {
+        width: 100%;
+        height: 500px;
+        object-fit: contain;
+      }
+    }
+  }
+
+  & > .controls {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    margin-bottom: 10px;
+
+    .hidden {
+      opacity: 0;
+      cursor: context-menu;
+    }
+  }
+
+  & > .details {
+    position: relative;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: $primary-white;
+    display: flex;
+    flex-direction: column;
+
+    & > div {
+      display: flex;
+      flex-direction: row;
+      margin: 2px 5px;
+
+      & > i {
+        margin-right: 5px;
+        margin-top: 2px;
+      }
+    }
+
+    & > .ownerDetails {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 10px;
+      height: 40px;
+
+      & img, i {
+        display: inline-flex;
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      & i {
+        align-items: center;
+        justify-content: center;
+        font-size: 25px;
+        border: 1px solid darken($light-gray, 5%);
+
+        &::before {
+          position: absolute;
+          top: 20px;
+        }
+      }
+
+      & > .aside {
+        display: inline-flex;
+        flex-direction: column;
+        margin-left: 10px;
+
+        & h4 {
+          margin: 0;
+        }
+
+        & a {
+          color: $brand-danger;
+        }
+      }
+    }
+
+    & > .branch {
+      display: block;
+
+      & p {
+        display: inline-block;
+        margin: 0;
+        padding-left: 10px;
+        font-weight: 600;
+      }
+    }
+  }
+}

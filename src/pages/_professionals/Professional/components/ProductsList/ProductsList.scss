@@ -1,0 +1,42 @@
+@import '../../../../../styles/app';
+
+.root {
+  padding-top: 15px;
+}
+
+.addPostsButton {
+  width: 133px;
+  height: 32px;
+  margin-bottom: 0;
+  border-radius: 22px;
+  background: transparent;
+  border: solid 1px #ed6853;
+  color: #ed6853;
+  font-weight: bold;
+  float: right;
+  position: relative;
+  z-index: 1;
+
+  &:focus{
+    outline: none;
+  }
+
+  &:hover {
+    background-color: #ed6853;
+    color: white;
+  }
+}
+
+.addPostsDiv {
+  height: 30px;
+  margin-top: -16px;
+}
+
+.buttonDiv {
+  position: absolute;
+  right: 35px;
+}
+
+.postsList {
+  top: -10px;
+}

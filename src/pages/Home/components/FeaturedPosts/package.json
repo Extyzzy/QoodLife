@@ -1,0 +1,6 @@
+{
+  "name": "HomeFeaturedPosts",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./FeaturedPostsContainer.js"
+}

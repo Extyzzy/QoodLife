@@ -1,0 +1,6 @@
+{
+  "name": "CreatePostButton",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./CreatePostButton.js"
+}

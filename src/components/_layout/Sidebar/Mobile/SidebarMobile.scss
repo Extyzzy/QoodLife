@@ -1,0 +1,305 @@
+@import '../../../../styles/app';
+
+.root {
+  .backgroundShadow {
+    background: rgba(0, 0, 0, 0.75);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 9;
+  }
+
+  .group {
+    & > a {
+      display: block;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      color: $text-color;
+      background-color: transparent;
+      border: 1px solid $text-color;
+      line-height: 30px;
+      padding: 0 15px;
+      border-radius: 25px;
+      cursor: pointer;
+      margin-bottom: 5px;
+      position: relative;
+
+      &::after {
+        font-family: 'qood-life';
+        font-size: 15px;
+        content: 'A';
+        position: absolute;
+        right: 9px;
+        top: 2px;
+
+        @include transition(transform 0.4s);
+        @include rotate(90);
+      }
+    }
+
+    & .category {
+      cursor: pointer;
+
+      &:hover {
+        font-weight: 600;
+      }
+
+      &.active {
+        font-weight: 700;
+      }
+    }
+
+    &.open > a,
+    & > a:hover {
+      color: $primary-white;
+      background-color: $brand-success;
+      border-color: $brand-success;
+    }
+
+    &.open {
+      margin-bottom: 10px;
+
+      & > a {
+        &::after {
+          @include rotate(0);
+        }
+      }
+
+      & > ul {
+        display: block;
+      }
+    }
+  }
+
+  .hobby {
+    list-style: none;
+    cursor: pointer;
+    margin-left: -20px;
+
+    &:hover {
+      font-weight: 600;
+    }
+
+    &.active {
+      font-weight: 700;
+    }
+  }
+
+  .subcategoryHobby {
+    list-style: none;
+    margin-left: -20px;
+  }
+
+  .scrollBars {
+    height: 300px;
+  }
+
+  .list {
+    list-style: none;
+    padding-left: 15px;
+  }
+
+  .links {
+    margin-bottom: 10px;
+    position: relative;
+
+    span {
+      display: block;
+      cursor: pointer;
+      margin: 5px 0;
+      margin-left: 15px;
+    }
+
+    span:hover {
+      font-weight: 700;
+    }
+
+    .favorites {
+      margin-left: 10px;
+    }
+
+    .professional {
+      margin-left: 10px;
+    }
+
+    .agent {
+      margin-left: 10px;
+    }
+
+    .favoritesTab {
+
+      ::after {
+        font-family: 'qood-life';
+        font-size: 15px;
+        content: 'A';
+        position: absolute;
+        right: 9px;
+        color: $primary-gray;
+
+        @include transition(transform 0.4s);
+        @include rotate(90);
+      }
+    }
+
+    .professionalTab {
+
+      ::after {
+        font-family: 'qood-life';
+        font-size: 15px;
+        content: 'A';
+        position: absolute;
+        right: 9px;
+        color: $primary-gray;
+
+        @include transition(transform 0.4s);
+        @include rotate(90);
+      }
+    }
+
+    .agentTab {
+
+      ::after {
+        font-family: 'qood-life';
+        font-size: 15px;
+        content: 'A';
+        position: absolute;
+        right: 9px;
+        color: $primary-gray;
+
+        @include transition(transform 0.4s);
+        @include rotate(90);
+      }
+    }
+
+    .openTab {
+      ::after {
+        @include rotate(0);
+      }
+    }
+
+    .open {
+      font-weight: 700;
+    }
+
+    li {
+      a {
+        padding: 2px 0;
+        color: $text-color;
+
+        &:hover {
+          font-weight: 600;
+          background-color: #e8e8e8;
+        }
+      }
+    }
+
+    .buttonMyProfile {
+      color: $primary-white;
+      background-color: $brand-success;
+      border-color: $brand-success;
+      display: block;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      line-height: 30px;
+      padding: 0 15px;
+      border-radius: 25px;
+      cursor: default;
+      margin-bottom: 5px;
+      position: relative;
+    }
+  }
+
+  .active {
+    font-weight: 700;
+  }
+
+  .swith {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 10px;
+    z-index: 10;
+    width: 100%;
+  }
+
+  .buttonsCategory {
+    padding: 15px;
+  }
+
+  .containnerCategory {
+    position: fixed;
+    left: -100%;
+    width: 250px;
+    height: 100%;
+    z-index: 11;
+    background-color: $body-bg;
+    transition: left 0.9s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .showSideBar {
+    left: 0;
+  }
+
+  .containerButton {
+    .button {
+      padding: 10px;
+      display: block;
+      cursor: pointer;
+      border-radius: 30px;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.35);
+      position: relative;
+      background-color: $brand-success;
+      font-weight: 600;
+      color: $primary-white;
+    }
+
+    span {
+      position: absolute;
+      top: 9px;
+      left: 12px;
+    }
+  }
+
+  .containerCloseButton {
+    margin-bottom: 70px;
+    z-index: 10;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+
+    .closeButton {
+      width: 43px;
+      height: 43px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      border-radius: 30px;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.35);
+      position: relative;
+      background-color: $btn-close-grey;
+      font-weight: 600;
+      color: $primary-white;
+    }
+
+    .icon {
+      margin-left: 1px;
+      margin-top: -1px;
+    }
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .containnerCategory {
+    width: 90% !important;
+  }
+
+  .containerCloseButton {
+    width: 100% !important;
+  }
+}

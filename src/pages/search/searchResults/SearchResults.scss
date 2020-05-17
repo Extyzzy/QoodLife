@@ -1,0 +1,18 @@
+@import '../../../styles/app';
+
+.root {
+  padding: 15px;
+  min-height: 300px;
+
+  & > .policiesLinks {
+    display: block;
+    width: 100%;
+
+    & > .linkItem {
+      display: inline-flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      width: 50%;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@import '../../../../../styles/app';
+
+.root {
+  cursor: pointer;
+
+  .input {
+    width: 100%;
+  }
+
+  .image {
+    width: 70px;
+  }
+
+  .displayBlock {
+    display: block;
+  }
+}
+
+.toolbarEditor {
+  position: relative;
+}
+
+.description {
+  width: 100%;
+  resize: vertical;
+  min-height: 75px;
+}
+
+.mapInput {
+  height: 400px;
+  display: block;
+}
+
+select:not([multiple]) {
+  height: 30px;
+  width: 70px;
+  overflow: hidden;
+}
+
+.button {
+  padding-top: 50px;
+}

@@ -1,0 +1,165 @@
+@import '../../../styles/app';
+
+.root {
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  position: relative;
+
+  & > .title {
+    color: $text-color;
+    text-align: center;
+    font-size: 35px;
+    margin: 20px;
+    font-weight: 700;
+  }
+
+  & > .poster {
+    position: relative;
+    margin-bottom: 15px;
+
+    & > .image {
+      & > img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  & > .controls {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    margin-bottom: 10px;
+    padding: 0 20px;
+
+
+    .hidden {
+      opacity: 0;
+      cursor: context-menu;
+    }
+  }
+
+  & > .gallery {
+    position: relative;
+    margin: 0 10px;
+    margin-bottom: 10px;
+
+    & > .image {
+      position: relative;
+      display: inline-block;
+      width: calc(100% / 6);
+      padding: 5px;
+      cursor: pointer;
+
+      & > img {
+        width: 100%;
+        height: 125px;
+        object-fit: cover;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        bottom: 5px;
+        left: 5px;
+      }
+
+      &.active::after {
+        border: 1px solid $primary-white;
+      }
+
+      &:not(.active)::after {
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+
+  & > .content {
+    margin-bottom: 15px;
+    padding: 15px;
+    overflow: hidden;
+    background-color: $primary-white;
+    color: #262626;
+
+    & > img {
+      width: 100% !important;
+      height: auto !important;
+    }
+  }
+
+  & > .tags {
+    display: block;
+    background-color: $primary-white;
+    margin-bottom: 15px;
+    border-top: 1px solid $primary-gray;
+    padding: 10px 15px 15px;
+
+    & > span {
+      margin-right: 5px;
+      padding-left: 10px;
+    }
+
+    & > .tag {
+      display: inline-block;
+      width: fit-content;
+      border: 1px solid #959595;
+      border-radius: 15px;
+      margin: 2px 4px;
+      padding: 2px 10px;
+      font-size: 14px;
+      font-weight: bold;
+
+      &::before {
+        content: '#';
+        margin-right: 2px;
+      }
+    }
+  }
+
+  .ownerDetails {
+    flex-direction: row;
+    align-items: center;
+    padding: 15px;
+    padding-top: 10px;
+    height: 60px;
+    background-color: white;
+    display: flex;
+
+    & img, i {
+      display: inline-flex;
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    & i {
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      border: 1px solid darken($light-gray, 5%);
+
+      &::before {
+        top: -2px;
+      }
+    }
+
+
+    & > .aside {
+      display: inline-flex;
+      flex-direction: column;
+      margin-left: 10px;
+
+      & h4 {
+        margin: 0;
+      }
+
+      & a {
+        color: $brand-danger;
+      }
+    }
+  }
+}

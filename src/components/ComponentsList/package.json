@@ -1,0 +1,6 @@
+{
+  "name": "ComponentsList",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./ComponentsList.js"
+}

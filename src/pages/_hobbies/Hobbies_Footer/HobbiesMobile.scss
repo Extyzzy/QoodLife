@@ -1,0 +1,87 @@
+@import '../../../styles/app';
+
+.root {
+  .dataContainer {
+    width: 360px;
+    padding-left: 5px;
+
+    & i {
+      color: gray;
+      font-size: 12px;
+      display: inline-flex;
+      transform: rotate(-90deg);
+    }
+  }
+
+  padding: 15px 0;
+  display: flex;
+
+  & > div {
+    width: 25%;
+  }
+
+  .title {
+    color: gray;
+    padding: 0px 5px;
+  }
+
+  ul {
+    padding-left: 15px;
+    margin-top: 10px;
+  }
+
+  ul > li {
+    list-style-type: none;
+    cursor: pointer;
+    line-height: 2em;
+    position: relative;
+
+    .arrow {
+      position: absolute;
+      left: -20px;
+      top: 7px;
+      display: none;
+    }
+
+    & > button {
+      display: none;
+      position: absolute;
+      right: -25px;
+      top: 0;
+      height: 25px;
+      width: 25px;
+      border-radius: 50%;
+      background-color: transparent;
+      border: solid 1px grey;
+      color: grey;
+      outline: none;
+
+      & > i::before {
+        position: relative;
+        top: -2px;
+        left: -1px;
+        font-size: 15px;
+      }
+
+      & > svg {
+        font-size: 15px;
+        position: absolute;
+        top: 5px;
+        left: 4px;
+      }
+    }
+    
+
+    button {
+      display: block;
+      position: absolute;
+      right: 10px;
+    }
+  }
+
+  .open {
+    font-weight: 700;
+    display: block !important;
+  }
+
+}

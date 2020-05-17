@@ -1,0 +1,128 @@
+@import '../../../styles/app';
+
+.root {
+  padding: 15px;
+  position: relative;
+
+  & > .header {
+    height: 35px;
+  }
+
+  & > .profileDetails {
+    display: flex;
+    flex-direction: row;
+
+    & > .avatar {
+      display: inline-flex;
+      width: 200px;
+      height: 200px;
+      margin: 0 0 10px;
+
+      & > i, div i {
+        font-size: 100px;
+        text-align: center;
+        padding: 40px 30px;
+        width: 200px;
+        height: 200px;
+        border: 1px solid darken($light-gray, 5%);
+        color: $light-gray;
+      }
+
+      & > img {
+        display: flex;
+        width: 200px;
+        height: 200px;
+        margin-right: 20px;
+        object-fit: contain;
+      }
+    }
+
+    & > .details {
+      display: inline-flex;
+      flex-direction: column;
+      width: calc(100% - 200px);
+      min-height: 210px;
+      padding: 0 10px 0 20px;
+
+      & > .aside {
+        flex-direction: column;
+
+        & > .detaildsField,
+        .detaildsField div {
+          & > i {
+            margin-right: 5px;
+            margin-top: 2px;
+          }
+
+          & > a {
+            display: flex;
+          }
+
+          & > p {
+            display: inline-flex;
+            margin: 2px 0;
+            font-size: 18px;
+          }
+        }
+      }
+
+      & > .userName {
+        margin: 0;
+        font-size: 23px;
+      }
+
+      & > .userPosition {
+        margin: 5px 0;
+      }
+    }
+  }
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.hidden {
+  opacity: 0;
+  cursor: context-menu;
+}
+
+.bold {
+  font-weight:bold;
+}
+
+.buttonExtind {
+  text-align: center;
+  padding-bottom: 20px;
+
+  .extind {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    color: $brand-danger;
+    font-weight: 600;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      right: -25px;
+      top: 3px;
+      transition: transform .8s ease-in-out;
+    }
+  }
+
+  .rotate {
+
+    &::before {
+      display: inline-block;
+      transform: rotate(180deg);
+      transition: transform .8s ease-in-out;
+    }
+  }
+}

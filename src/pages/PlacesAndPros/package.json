@@ -1,0 +1,6 @@
+{
+  "name": "PlacesAndProfessionals",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./PlacesAndPros.js"
+}

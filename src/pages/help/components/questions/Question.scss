@@ -1,0 +1,59 @@
+@import '../../../../styles/app';
+
+.root {
+  .questionShow {
+    color: $brand-success;
+    border-bottom: 1px solid $brand-success !important;
+  }
+
+  .question {
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    border-bottom: 1px solid white;
+
+    &:hover {
+      color: $brand-success;
+      cursor: pointer;
+      border-bottom: 1px solid $brand-success !important;
+
+      i {
+        color: $brand-success !important;
+      }
+    }
+
+    & i {
+      position: absolute;
+      right: 0;
+
+      &.left {
+        transform: rotate(90deg);
+        color: #d1d1d1;
+      }
+    }
+  }
+
+  .content {
+    width: 730px;
+    margin-left: 100px;
+    padding-bottom: 10px;
+  }
+}
+
+.contentMobile {
+  padding: 0 5px;
+  padding-bottom: 10px;
+}
+
+.layout {
+  background-color: white;
+  width: 860px;
+  margin-left: 180px;
+  padding: 0 10px;
+}
+
+.mobile {
+  background-color: white;
+  padding: 0 10px;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "ChangePasswordPopup",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./ChangePasswordPopup.js"
+}

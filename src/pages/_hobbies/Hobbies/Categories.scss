@@ -1,0 +1,159 @@
+@import '../../../styles/app';
+
+.root {
+  padding: 15px 0;
+
+  & > .nav {
+    display: flex;
+    align-items: center;
+
+    & > .title {
+      padding-left: 15px;
+      font-size: 18px;
+      margin: 0;
+    }
+
+    h1, h2 {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0;
+      display: inline-flex;
+    }
+
+    .containnerTree {
+      display: inline-flex;
+    }
+
+    .tree {
+      font-size: 15px;
+      margin: 0 15px;
+      height: 18px;
+    }
+  }
+}
+
+.categoriesList {
+  display: flex;
+  flex-wrap: wrap;
+
+  & > .listItem {
+    display: table-cell;
+    width: calc(100% / 3 - 30px);
+    position: relative;
+    margin: 15px;
+
+    & > .title {
+      font-size: 18px;
+    }
+
+    & > img {
+      width: 392px;
+      height: 200px;
+      cursor: pointer;
+    }
+
+    & > .cardBlock {
+      display: none;
+      position: absolute;
+      width: 392px;
+      height: 200px;
+      padding: 15px;
+      bottom: 0;
+      left: 0;
+
+      & > .hobbiesList {
+        display: flex;
+        flex-wrap: wrap;
+        max-height: 150px;
+
+        & > .listItem {
+          display: inline-flex;
+          width: 50%;
+          margin-bottom: 15px;
+
+          & > .link {
+            color: $primary-white;
+            text-decoration: none;
+          }
+
+          &.active {
+            & > button {
+              background-color: $brand-danger;
+              color: $primary-white;
+            }
+          }
+
+          & > button {
+            display: inline-block;
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: solid 1px $brand-danger;
+            color: $brand-danger;
+            outline: none;
+
+            & > i::before {
+              position: relative;
+              top: 3px;
+            }
+
+            &:hover {
+              background-color: $brand-danger;
+              color: $primary-white;
+            }
+
+            &:focus {
+              outline: none;
+            }
+          }
+
+          & > span {
+            color: $primary-white;
+            margin-left: 5px;
+            padding-top: 5px;
+            white-space: nowrap;
+            width: 130px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            cursor: pointer;
+          }
+        }
+      }
+
+      & > .more {
+        height: 20px;
+        text-align: center;
+        position: absolute;
+        bottom: 15px;
+        left: 0;
+        width: 100%;
+
+        & > a {
+          color: $primary-white;
+          text-decoration: none;
+        }
+      }
+    }
+
+    &:hover {
+      & > img {
+        filter: brightness(50%);
+      }
+
+      & > .cardBlock {
+        display: block;
+      }
+    }
+  }
+}
+
+.link {
+  cursor: pointer;
+  margin-left: 15px;
+  display: inline-block;
+
+  &:hover {
+    color: $brand-danger;
+  }
+}

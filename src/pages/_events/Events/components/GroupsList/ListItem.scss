@@ -1,0 +1,267 @@
+@import '../../../../../styles/app';
+
+.poster {
+  padding: 10px;
+  margin-bottom: 10px;
+  background: $primary-white;
+
+  & > .date {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    width: 110px;
+    height: 225px;
+    padding-top: 20px;
+    color: $text-color;
+
+    &.mobile {
+      width: 80px;
+    }
+
+    & > .dayOfWeek {
+      text-transform: uppercase;
+    }
+
+    & > .day {
+      font-size: 56px;
+      line-height: 44px;
+      font-weight: 700;
+    }
+
+    & > .month {
+      text-transform: uppercase;
+    }
+
+    & > .hobbies {
+      margin-top: 5px;
+    }
+  }
+
+  & > .groupMembers {
+    display: inline-flex;
+    flex-direction: column;
+    vertical-align: top;
+    width: calc(50% - 180px);
+    min-height: 225px;
+
+    &.mobile {
+      padding: 5px;
+      width: calc(100% - 80px);
+    }
+
+    & > .owner {
+      display: inline-flex;
+      position: relative;
+      height: 80px;
+      padding: 10px 15px;
+      border-bottom: 1px solid darken($light-gray, 5%);
+
+      & > .icon {
+        display: inline-flex;
+        vertical-align: top;
+        cursor: pointer;
+
+        & > .ownerAvatarImg {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          margin-right: 5px;
+          object-fit: cover;
+
+          @include no-select();
+        }
+
+        & > i {
+          display: inline-flex;
+          height: 50px;
+          width: 50px;
+          border-radius: 50%;
+          border: 1px solid darken($light-gray, 5%);
+          margin-right: 5px;
+          font-size: 36px;
+          line-height: 36px;
+          text-align: center;
+
+          &::before {
+            line-height: 45px;
+          }
+        }
+      }
+
+      & > .ownerDetails {
+        display: inline-flex;
+        flex-direction: column;
+        vertical-align: top;
+        margin-left: 5px;
+
+        &.mobile {
+          margin-left: 3px;
+          max-width: 131px;
+
+          & > .name {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 26px;
+          }
+        }
+
+        & > .name {
+          font-size: 20px;
+          font-weight: 600;
+          line-height: 32px;
+        }
+
+        & > .currentNumberOfMembersOutOfTotal {
+          font-weight: 300;
+          font-size: 14px;
+
+          & > i {
+            margin-right: 5px;
+
+            &::before {
+              position: relative;
+              top: 1px;
+            }
+          }
+        }
+      }
+    }
+
+    & > .members {
+      display: inline-flex;
+      padding: 5px 15px;
+
+      & > .membersList {
+        & > .member {
+          display: inline-flex;
+          vertical-align: top;
+          width: 20%;
+          text-align: left;
+          padding: 5px;
+
+          & > .icon {
+            display: inline-flex;
+            vertical-align: top;
+            cursor: pointer;
+
+            & > .memberAvatarImg {
+              width: 35px;
+              height: 35px;
+              border-radius: 50%;
+              margin-right: 5px;
+              object-fit: cover;
+
+              @include no-select();
+            }
+
+            & > i {
+              display: inline-flex;
+              height: 35px;
+              width: 35px;
+              border-radius: 50%;
+              border: 1px solid darken($light-gray, 5%);
+              margin-right: 5px;
+              font-size: 24px;
+              line-height: 36px;
+              text-align: center;
+
+              &::before {
+                line-height: 35px;
+              }
+            }
+          }
+
+          & > .numberOfUndisplayedMembers {
+            display: inline-flex;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 1px solid darken($light-gray, 5%);
+            text-align: center;
+            line-height: 35px;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  & > .details {
+    display: inline-flex;
+    flex-direction: column;
+    width: calc(50% + 70px);
+    padding-left: 15px;
+    position: relative;
+    min-height: 180px;
+
+    &.mobile {
+      width: 100%;
+    }
+
+    & > .title {
+      display: inline-flex;
+      height: 58px;
+      font-weight: normal;
+      font-size: 20px;
+    }
+
+    & > .map,
+    .description {
+      display: inline-flex;
+      font-size: 15px;
+    }
+
+    & > .description {
+      display: inline-flex;
+      flex-direction: row;
+
+      & > .content {
+        display: -webkit-box;
+        width: 100%;
+        margin-bottom: 40px;
+        line-height: 25px;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    & > div > i,
+    & > div > p {
+      display: inline-flex;
+      margin-right: 5px;
+      font-size: 15px;
+
+      &::before {
+        position: relative;
+        top: 2px;
+      }
+    }
+  }
+}
+
+.joinToGroup {
+  color: $text-color;
+  border: 1px solid $text-color;
+  border-radius: 50%;
+  background: none;
+  width: 35px;
+  height: 35px;
+  position: relative;
+  top: 0;
+
+  & > i {
+    font-size: 20px;
+    position: relative;
+    top: 3px;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.isJoining {
+    cursor: progress;
+  }
+}

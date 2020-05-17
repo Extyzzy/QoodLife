@@ -1,0 +1,34 @@
+@import '../../../../styles/app';
+
+.root {
+  & > .categoryImage {
+    vertical-align: top;
+    display: inline-flex;
+    width: 392px;
+    height: 200px;
+  }
+
+  & > .details {
+    vertical-align: top;
+    display: inline-flex;
+    width: 70%;
+    padding: 0 10px;
+
+    & div {
+      width: 100%;
+    }
+  }
+}
+
+.hobbyImage {
+  height: 50px;
+}
+
+.actionBtn {
+  padding: 5px 10px;
+  line-height: 0;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "PublicProfile",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./PublicProfileContainer.js"
+}

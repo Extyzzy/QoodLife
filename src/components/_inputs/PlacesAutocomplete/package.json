@@ -1,0 +1,6 @@
+{
+  "name": "PlacesAutocomplete",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./PlacesAutocomplete.js"
+}

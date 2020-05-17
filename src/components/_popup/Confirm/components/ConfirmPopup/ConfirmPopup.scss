@@ -1,0 +1,61 @@
+@import '../../../../../styles/app';
+
+.root {
+  position: relative;
+
+  & > .title {
+    color: $primary-white;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+  }
+}
+
+.buttons {
+  margin-top: 5px;
+  text-align: center;
+
+  button {
+    position: relative;
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .cardButton {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 0;
+    border-radius: 50%;
+    background: transparent;
+    border: solid 1px green;
+    color: green;
+  }
+
+  .cardButton:hover {
+    background: green;
+    color: white;
+    border: solid 1px green;
+  }
+
+  .removeButton {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 0;
+    margin-left: 15px;
+    border-radius: 50%;
+    background: transparent;
+    border: solid 1px #ed6853;
+    color: #ed6853;
+    font-weight: bold;
+  }
+
+  .removeButton:hover {
+    background: #ed6853;
+    color: white;
+  }
+}

@@ -1,0 +1,31 @@
+@import '../../styles/app';
+
+.root {
+  font-size: 15px;
+  position: relative;
+
+  & > .hobbyBlock {
+    min-width: 91px;
+    width: 100%;
+  }
+
+  & > span {
+    display: block;
+    cursor: pointer;
+    height: 9px;
+    line-height: 0;
+  }
+}
+
+.popoverInPopup {
+  position: absolute;
+  width: 272px;
+  color: #444;
+}
+
+.HobbiesInPopup,
+.seeMoreInPopup {
+  padding: 0 2px;
+  color: $primary-white;
+  line-height: initial;
+}

@@ -1,0 +1,98 @@
+@import '../../../../styles/app';
+
+.root {
+    text-align: center;
+}
+
+.hobbiesList {
+
+  & > .listItem {
+    width: 100%;
+    position: relative;
+    margin: 15px 0;
+    cursor: pointer;
+
+    & > .title {
+      display: table;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 9;
+      width: 100%;
+      height: 100%;
+      color: $primary-white;
+      font-size: 32px;
+      text-align: center;
+      line-height: 200px;
+
+      & > span {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: normal;
+      }
+    }
+
+    & > img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      cursor: pointer;
+      filter: brightness(50%);
+    }
+  }
+}
+
+.link {
+  cursor: pointer;
+  margin-left: 15px;
+  font-size: 41px;
+}
+
+
+.buttonContainer {
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
+  z-index: 10;
+
+  & > button {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: solid 1px $brand-danger;
+    color: $brand-danger;
+    outline: none;
+
+    & > i::before {
+      position: relative;
+      top: 3px;
+      font-size: 20px;
+    }
+
+    & > svg {
+      font-size: 20px;
+    }
+
+    &:hover {
+      background-color: $brand-danger;
+      color: $primary-white;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+}
+
+.active {
+  & > button {
+    background-color: $brand-danger;
+    color: $primary-white;
+  }
+}
+

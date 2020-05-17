@@ -1,0 +1,53 @@
+@import '../../../../../styles/app';
+
+.root {
+  display: table-cell;
+  width: calc(100% / 3);
+  position: relative;
+  padding: 0 15px 10px;
+  margin: 13px 0;
+
+  &:hover {
+    .image {
+      & > img {
+        filter: brightness(75%);
+      }
+    }
+
+    .actionButtons {
+      display: block;
+    }
+  }
+}
+
+.details {
+  .name {
+    //
+  }
+}
+
+.image {
+  position: relative;
+
+  & > img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    cursor: pointer;
+  }
+}
+
+.actionButtons {
+  display: none;
+  position: absolute;
+  height: 25px;
+  top: 120px;
+  right: 25px;
+}
+
+@media screen and (max-width: $screen-sm-min) {
+  .root {
+    width: 300px;
+    padding: 0 10px 10px;
+  }
+}

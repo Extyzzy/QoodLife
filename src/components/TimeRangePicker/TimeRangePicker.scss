@@ -1,0 +1,175 @@
+@import '../../styles/app';
+
+.root {
+  position: relative;
+  display: inline-block;
+  height: 30px;
+  width: 302px;
+
+  &.noTime {
+    width: 360px;
+
+    & > .dateInput > .data {
+      width: 165px;
+    }
+  }
+
+  &.mobile {
+    width: 100%;
+    height: 100%;
+    height: 30px;
+  }
+
+  & > .dateInput {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    height: 34px;
+    text-align: center;
+    line-height: 34px;
+    color: #777;
+    z-index: 4;
+
+    &.open {
+      height: 50px;
+      border-bottom: 0;
+      border-radius: 2px;
+      border: 1px solid darken($light-gray, 50%);
+    }
+
+    &.mobile {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    & > .data {
+      display: inline-flex;
+      justify-content: center;
+      height: 30px;
+      width: calc(50% - 12px);
+      vertical-align: top;
+      padding: 5px;
+      line-height: 20px;
+      background-color: $primary-white;
+      border-radius: 2px;
+      border: 1px solid darken($light-gray, 50%);
+      cursor: pointer;
+
+      &.open {
+        height: 50px;
+        border: none;
+
+        & p {
+          border: none;
+        }
+      }
+
+      &.mobile {
+        width: calc(50% - 20px);
+      }
+
+      & i {
+        position: relative;
+        padding: 0 10px;
+        font-size: 17px;
+
+        &::before {
+          position: absolute;
+          top: 0px;
+          left: 0;
+        }
+      }
+    }
+
+    & > .intervalArrow {
+      position: relative;
+      padding: 0 5px;
+      font-size: 15px;
+      width: 24px;
+
+      &.open {
+        height: 50px;
+        background-color: $primary-white;
+      }
+    }
+
+    &.singleCalendar {
+      width: 252px;
+    }
+
+    @include no-select();
+  }
+
+  & > .content {
+    position: absolute;
+    display: block;
+    top: 49px;
+    right: -75px;
+    padding: 9px;
+    border: 1px solid darken($light-gray, 50%);
+    border-radius: 2px;
+    background-color: $primary-white;
+    box-sizing: border-box;
+    z-index: 3;
+    text-align: center;
+    width: 480px;
+
+    &.extended {
+      right: -60px;
+    }
+
+    &.mobile {
+      position: relative;
+      margin-bottom: 15px;
+      width: 100%;
+      right: 0;
+      top: 49px;
+
+      &.noTime {
+        top: 0;
+        border-left: 0;
+        border-right: 0;
+      }
+    }
+
+    & > .hasRangeCheckBox {
+      display: block;
+      padding: 5px 10px;
+      height: 30px;
+      font-size: 13px;
+      text-align: right;
+
+      & > label {
+        vertical-align: top;
+        padding: 1px 5px;
+      }
+
+      & > input {
+        width: 10px;
+        height: 15px;
+      }
+    }
+
+    & > .calendarBody {
+      display: inline-block;
+      vertical-align: top;
+      width: 50%;
+      padding: 0 9px;
+
+      & > .rdtPicker {
+        width: 200px;
+      }
+
+      &.mobile {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.intervalDay {
+  background-color: $brand-success;
+  color: $primary-white;
+  opacity: 0.5;
+}

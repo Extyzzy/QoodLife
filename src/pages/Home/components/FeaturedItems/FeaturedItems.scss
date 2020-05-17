@@ -1,0 +1,54 @@
+@import '../../../../styles/app';
+
+.root {
+  background-color: $body-bg;
+}
+
+.navigation {
+  background-color: $primary-white;
+  height: 60px;
+  display: flex;
+
+  a:link {
+    color: $text-color !important;
+    cursor: pointer !important;
+    &:hover {
+      background-color: #e8e8e8 !important;
+    }
+  }
+}
+
+.activeTab {
+  a:link {
+    background-color: white !important;
+    border: white !important;
+  }
+}
+
+.navigationItem {
+  height: 60px;
+  line-height: 30px;
+  font-size: 26px;
+  font-weight: 500;
+  width: 25% !important;
+
+  &:last-child > a {
+    border-right: 0 !important;
+  }
+
+  &:first-child > a {
+    border-left: 0 !important;
+  }
+
+  & > a {
+    color: darken($primary-gray, 15%) !important;
+    height: 50px;
+    line-height: 25px !important;
+    margin-top: 10px;
+    border-radius: 0 !important;
+  }
+}
+
+.content {
+  padding: 10px 0;
+}

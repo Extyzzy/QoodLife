@@ -1,0 +1,6 @@
+{
+  "name": "MapInput",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./MapInput.js"
+}

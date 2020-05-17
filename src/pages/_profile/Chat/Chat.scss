@@ -1,0 +1,155 @@
+@import '../../../styles/app';
+
+.root {
+  padding: 5px 15px 15px;
+
+  & > .header {
+    height: 45px;
+  }
+
+  & > .content {
+    & > .searchInput {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      padding: 13px 0 10px;
+      height: 52px;
+      width: 100%;
+
+      &.mobile {
+        &::before {
+          left: 10px;
+        }
+
+        & > input {
+          width: 100%;
+        }
+      }
+
+      & label {
+        display: inline-flex;
+        width: 20%;
+        height: 32px;
+        font-weight: 400;
+        padding: 5px;
+        margin: 0;
+      }
+
+      &::before {
+        font-family: 'qood-life';
+        content: 'o';
+        position: absolute;
+        font-size: 16px;
+        z-index: 3;
+        top: 17px;
+        left: calc(20% + 10px);
+        opacity: 0.6;
+      }
+
+      & > input {
+        width: 80%;
+        border: solid 1.4px gainsboro;
+        font-size: 18px;
+        line-height: 22px;
+        padding: 7px 10px 5px 30px;
+        height: 32px;
+        border-radius: 15px;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    & > .usersList {
+      display: flex;
+      flex-direction: column;
+
+      & > .listItem {
+        display: flex;
+        min-height: 90px;
+        flex-direction: row;
+        align-items: center;
+        border-bottom: solid 1.4px gainsboro;
+        padding: 10px;
+
+        & > .Itemcontent {
+          display: inline-flex;
+          width: calc(100% - 45px);
+          cursor: pointer;
+
+          & > .details {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: 45px;
+
+            & > .avatarImage {
+              width: 45px;
+              height: 45px;
+              display: inline-flex;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+
+            & .avatarIcon {
+              width: 45px;
+              height: 45px;
+              font-size: 29px;
+              display: inline-flex;
+              padding: 5px 8px;
+              border-radius: 50%;
+              border: 1px solid darken($light-gray, 5%);
+            }
+
+            & >.name {
+              width: calc(100% - 45px);
+              display: inline-flex;
+              position: relative;
+              padding: 5px;
+              font-size: 20px;
+
+              & strong {
+                position: absolute;
+                font-size: 12px;
+                bottom: -10px;
+              }
+
+              &.mobile {
+                width: 190px;
+              }
+            }
+          }
+
+          & > .lastMessageContent {
+            width: 60%;
+            align-self: flex-start;
+          }
+        }
+
+        & > .closer {
+          display: inline-flex;
+          justify-content: center;
+          width: 40px;
+        }
+      }
+    }
+  }
+}
+
+.closeButton {
+  position: relative;
+  left: 800px;
+  top: -5px;
+}
+
+.closeButtonMobile {
+  position: relative;
+  color: white !important;
+  margin-top: -8px;
+  background: gray;
+  left: calc(100% - 50px);
+  top: -10px;
+}
+
+

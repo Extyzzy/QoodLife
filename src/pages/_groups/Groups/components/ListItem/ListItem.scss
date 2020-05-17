@@ -1,0 +1,242 @@
+@import '../../../../../styles/app';
+
+.root {
+  border-bottom: 1px solid $light-gray;
+  width: 100%;
+  padding: 10px 0;
+  margin-bottom: 5px;
+}
+
+.aside {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  width: 100px;
+  padding-top: 20px;
+  padding-right: 10px;
+
+  & > .date {
+    & > .dayOfWeek {
+      text-transform: uppercase;
+      color: $text-color;
+    }
+
+    & > .day {
+      font-size: 56px;
+      line-height: 44px;
+      font-weight: 700;
+      color: $text-color;
+    }
+
+    & > .month {
+      text-transform: uppercase;
+      color: $text-color;
+    }
+  }
+}
+
+.image {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+
+  &:hover {
+    & > img {
+      filter: brightness(75%);
+    }
+  }
+
+  & > img {
+    width: 240px;
+    height: 160px;
+    object-fit: cover;
+    cursor: pointer;
+    filter: brightness(85%);
+  }
+
+  .actionButtons {
+    position: absolute;
+    height: 25px;
+    right: 10px;
+    bottom: 15px;
+  }
+}
+
+.members {
+  color: $primary-white;
+  position: absolute;
+  height: 35px;
+  line-height: 30px;
+  z-index: 10;
+  bottom: 10px;
+  left: 10px;
+
+  & > i {
+    font-size: 15px;
+
+    &::before {
+      -webkit-font-smoothing: subpixel-antialiased;
+      -moz-osx-font-smoothing: inherit;
+    }
+  }
+
+  .currentNumberOfMembersOutOfTotal {
+    margin-left: 10px;
+  }
+}
+
+.details {
+  display: inline-block;
+  vertical-align: top;
+  width: calc(100% - 100px - 240px);
+  padding-left: 15px;
+  position: relative;
+  min-height: 160px;
+
+  & > .title {
+    color: $text-color;
+    font-weight: normal;
+    font-size: 20px;
+
+    & h4 {
+      border-bottom: 1px solid transparent;
+  
+      &:hover {
+        color: $brand-success;
+        border-bottom: 1px solid $brand-success;
+        width: 470px;
+      }
+    }
+    
+  }
+
+  & > .map,
+  .description {
+    font-size: 15px;
+  }
+
+
+  & > .description {
+    position: relative;
+    margin-bottom: 20px;
+    padding: 0;
+    width: 100%;
+    height: 61px;
+    overflow: hidden;
+
+    & P, i {
+      display: inline;
+    }
+
+    &:after {
+      content: "";
+      text-align: right;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 70%;
+      height: 1.2em;
+    }
+  }
+
+  @supports (-webkit-line-clamp: 3) {
+    .description {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+
+      &:after {
+          display: none;
+      }
+    }
+  }
+
+  & > .footer {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+
+    .dateTime {
+      color: #aeaeae;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+
+    .lastSeen {
+      position: absolute;
+      right: 0px;
+      margin-right: 22px;
+      margin-top: 7px;
+      color: $brand-danger;
+    }
+
+    .actionButtons {
+      height: 25px;
+      flex-grow: 1;
+      text-align: right;
+      margin-right: 15px;
+    }
+  }
+
+  & > div > i {
+    margin-right: 5px;
+    font-size: 15px;
+
+    &::before {
+      position: relative;
+      top: 2px;
+    }
+  }
+}
+
+.hasActionButtons {
+  & > .details {
+    & > .intro {
+      padding-bottom: 40px;
+    }
+  }
+
+  & > .description {
+    //
+  }
+}
+
+.joinToGroup {
+  color: $primary-white;
+  border: 2px solid $primary-white;
+  border-radius: 50%;
+  background: none;
+  width: 35px;
+  height: 35px;
+  position: relative;
+  padding: 0;
+  margin: 0;
+
+  & > i {
+    font-size: 20px;
+    position: relative;
+    top: 3px;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.isJoining {
+    cursor: progress;
+  }
+}
+
+.divMap {
+  height: 600px;
+  width: 855px;
+  top: 40px;
+  position: absolute;
+}
+
+.name {
+  color: $text-color;
+}

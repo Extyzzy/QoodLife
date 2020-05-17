@@ -1,0 +1,26 @@
+@import '../../../styles/app';
+
+.root {
+  padding: 30px;
+  min-height: 300px;
+
+  .subContent {
+    margin-left: 40px;
+  }
+
+  hr {
+    border-top: none;
+    margin-top: 11px;
+    margin-bottom: 11px;
+  }
+
+  .logout {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  td,th {
+    padding: 5px;
+    border: 1px solid grey;
+  }
+}

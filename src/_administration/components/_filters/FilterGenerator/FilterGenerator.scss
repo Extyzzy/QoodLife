@@ -1,0 +1,47 @@
+@import '../../../../styles/app';
+
+.root {
+  margin-bottom: 20px;
+}
+
+.filters {
+  margin-top: 15px;
+
+  .list {
+    .filter {
+      @media (max-width: 767px) {
+        & > div > div > div > div + div {
+          margin-top: 5px;
+        }
+      }
+
+      .delete {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: transparent;
+        position: relative;
+        border: 1px solid $brand-danger;
+        color: $brand-danger;
+        outline: 0;
+
+        & > i {
+          line-height: 28px;
+        }
+
+        &:hover {
+          color: $primary-white;
+          background-color: $brand-danger;
+        }
+      }
+
+      & > .filterSelect {
+        width: 100%;
+      }
+    }
+  }
+
+  .footer {
+    //
+  }
+}

@@ -1,0 +1,303 @@
+@import '../../../styles/app';
+
+.root {
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.title {
+  color: $text-color;
+  text-align: center;
+  font-size: 35px;
+  margin: 20px;
+  font-weight: 700;
+}
+
+.poster {
+  margin-bottom: 10px;
+  height: 250px;
+
+  & > .date {
+    display: inline-block;
+    vertical-align: top;
+    width: 100px;
+    height: 226px;
+    background-color: $brand-success;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 16px;
+    padding-top: 10px;
+    font-weight: 300;
+
+    & > .dayOfWeek {
+      text-transform: uppercase;
+      color: $primary-white;
+    }
+
+    & > .day {
+      font-size: 56px;
+      line-height: 44px;
+      font-weight: 700;
+      color: $primary-white;
+    }
+
+    & > .month {
+      text-transform: uppercase;
+      color: $primary-white;
+    }
+
+    & > .hobbies {
+      margin-top: 5px;
+      color: $primary-white;
+    }
+  }
+
+  & .sliderContainer {
+    position: relative;
+    left: 100px;
+    bottom: 226px;
+    width: 280px;
+  }
+
+  & .slider {
+    position: relative;
+    width: 300px;
+    height: 225px;
+    object-fit: cover;
+  }
+
+  & > .groupMembers {
+    position: relative;
+    left: 400px;
+    bottom: 450px;
+    background-color: $primary-white;
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 410px);
+    min-height: 225px;
+
+    & > .owner {
+      position: relative;
+      height: 80px;
+      padding: 10px 15px;
+      border-bottom: 1px solid darken($light-gray, 5%);
+
+      & > .icon {
+        display: inline-block;
+        vertical-align: top;
+        color: $text-color;
+
+        & > .ownerAvatarImg {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          margin-right: 5px;
+          object-fit: cover;
+
+          @include no-select();
+        }
+
+        & > i {
+          display: inline-block;
+          height: 50px;
+          width: 50px;
+          border-radius: 50%;
+          border: 1px solid darken($light-gray, 5%);
+          margin-right: 5px;
+          font-size: 36px;
+          line-height: 36px;
+          text-align: center;
+
+          &::before {
+            line-height: 45px;
+          }
+        }
+      }
+
+      & > .ownerDetails {
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 5px;
+
+        & > .name {
+          font-size: 20px;
+          font-weight: 600;
+          line-height: 32px;
+        }
+
+        & > .currentNumberOfMembersOutOfTotal {
+          font-weight: 300;
+          font-size: 14px;
+
+          & > i {
+            margin-right: 5px;
+
+            &::before {
+              position: relative;
+              top: 1px;
+            }
+          }
+        }
+      }
+    }
+
+    & > .members {
+      padding: 5px 15px;
+
+      & > .membersList {
+        & > .member {
+          display: inline-block;
+          vertical-align: top;
+          width: calc(100% / 8);
+          text-align: left;
+          padding: 5px;
+
+          & > .icon {
+            display: inline-block;
+            vertical-align: top;
+            color: $text-color;
+
+            & > .memberAvatarImg {
+              width: 35px;
+              height: 35px;
+              border-radius: 50%;
+              margin-right: 5px;
+              object-fit: cover;
+
+              @include no-select();
+            }
+
+            & > i {
+              display: inline-block;
+              height: 35px;
+              width: 35px;
+              border-radius: 50%;
+              border: 1px solid darken($light-gray, 5%);
+              margin-right: 5px;
+              font-size: 24px;
+              line-height: 36px;
+              text-align: center;
+
+              &::before {
+                line-height: 35px;
+              }
+            }
+          }
+
+          & > .name {
+            height: 35px;
+            line-height: 35px;
+            margin-left: 5px;
+            font-weight: 600;
+          }
+
+          & > .numberOfUndisplayedMembers {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 1px solid darken($light-gray, 5%);
+            text-align: center;
+            line-height: 35px;
+          }
+        }
+      }
+
+      & > .toggle {
+        text-align: center;
+        margin: 5px 0 15px;
+
+        & > a {
+          position: relative;
+          padding: 1px 10px;
+
+          &::after {
+            font-family: 'qood-life' !important;
+            font-style: normal !important;
+            font-weight: normal !important;
+            font-variant: normal !important;
+            text-transform: none !important;
+            speak: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 14px;
+            content: 'A';
+            position: absolute;
+            right: -10px;
+            top: 3px;
+
+            @include transition(transform 0.4s);
+          }
+        }
+      }
+    }
+
+    &.withDetails {
+      width: calc(100% - 110px);
+      left: 105px;
+      top: -226px;
+
+      & > .members {
+        & > .membersList {
+          & > .member {
+            width: calc(100% / 3);
+          }
+        }
+
+        & > .toggle {
+          & > a {
+            &::after {
+              @include rotate(180);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.details {
+  position: relative;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: $primary-white;
+
+  & > div > i {
+    margin-right: 5px;
+
+    &::before {
+      position: relative;
+      top: 2px;
+    }
+  }
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  margin-bottom: 10px;
+  padding: 0 20px;
+  .hidden {
+    opacity: 0;
+    cursor: context-menu;
+  }
+}
+
+.nextArrow,
+.prevArrow {
+  position: absolute;
+  top: 50% !important;
+  margin-top: -15px;
+  right: -30px;
+  display: block;
+  overflow: hidden;
+}
+
+.prevArrow {
+  left: -30px;
+}

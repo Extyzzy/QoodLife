@@ -1,0 +1,63 @@
+@import '../../styles/app';
+
+.root {
+  position: fixed;
+  background-color: #44494d;
+  padding: 20px;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 99;
+
+  & > .title {
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+
+    & > a {
+      color: white;
+      text-decoration: underline;
+    }
+  }
+
+  .accept {
+    margin-left: 5px;
+    font-size: 22px;
+    color: $brand-success;
+    cursor: pointer;
+    position: relative;
+
+    svg {
+      position: absolute;
+      top: -5px;
+    }
+  }
+
+  .reject {
+    margin-left: 30px;
+    font-size: 22px;
+    color: $brand-danger;
+    cursor: pointer;
+    position: relative;
+
+    svg {
+      position: absolute;
+      top: -4px;
+      transform: rotate(44deg);
+    }
+  }
+}
+
+.rootMobile {
+  display: block !important;
+  height: 140px;
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+}

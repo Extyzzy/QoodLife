@@ -1,0 +1,6 @@
+{
+  "name": "ListItemsFilter",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./ListItemsFilter.js"
+}

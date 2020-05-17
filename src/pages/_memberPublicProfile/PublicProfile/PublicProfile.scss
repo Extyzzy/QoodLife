@@ -1,0 +1,114 @@
+@import '../../../styles/app';
+
+.relatedTabs {
+  padding: 15px;
+}
+
+.root {
+  position: relative;
+  display: flex;
+  margin-bottom: 50px;
+  background-color: $primary-white;
+  padding: 15px;
+
+  &.mobile {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-right: 0;
+    margin-left: 0;
+
+    & > .avatar {
+      width: 100%;
+    }
+  }
+
+    & > .avatar {
+      display: flex;
+      justify-content: center;
+      width: 200px;
+
+      & > i {
+        font-size: 100px;
+        text-align: center;
+        padding: 40px 30px;
+        width: 200px;
+        height: 200px;
+        border: 1px solid darken($light-gray, 5%);
+        color: $light-gray;
+      }
+
+      & > img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+      }
+    }
+
+  & > .profileDetails {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding-left: 10px;
+
+    & > .userName {
+      margin: 0;
+      font-size: 23px;
+    }
+
+    & > .userPosition {
+      margin: 5px 0;
+    }
+
+    & > .additionalProfilesLink > .item {
+      display: flex;
+      flex-direction: row;
+
+      & > i {
+        padding: 3px;
+        margin-right: 3px;
+        color: #6a6a7a;
+      }
+
+      & > a {
+        font-size: 18px;
+        margin: 0;
+      }
+    }
+
+    & > .detaildsField,
+    .detaildsField div {
+      display: flex;
+      flex-direction: row;
+
+      & > i {
+        padding: 3px;
+        margin-right: 3px;
+        color: #6a6a7a;
+      }
+
+      & > p {
+        font-size: 18px;
+        margin: 0;
+      }
+    }
+  }
+
+  & > .gallery {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+
+    & > img {
+      display: inline-flex;
+      width: calc(100% / 3 - 4px);
+      margin: 2px;
+      height: 190px;
+    }
+  }
+}
+
+.hidden {
+  opacity: 0;
+  cursor: context-menu;
+}

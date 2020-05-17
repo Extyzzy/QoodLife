@@ -1,0 +1,55 @@
+@import '../../../styles/app';
+
+.root {
+  position: fixed;
+  z-index: 199;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.75);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  touch-action: none;
+
+  & > .content {
+    position: relative;
+    z-index: 200;
+    width: 895px;
+    margin: auto;
+    margin-top: 20px;
+    padding-right: 40px;
+
+    & > .closeButton {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 201;
+      padding-right: 56px;
+    }
+  }
+}
+
+.confirm {
+  margin-top: 0 !important;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media screen and (max-width: $screen-sm-min) {
+  .content {
+    width: 100% !important;
+    padding-right: 0 !important;
+    margin-top: 5vh !important;  
+  }
+}
+
+@media (min-width: 780px) and (max-width: 1350px ) {    //  temp
+  .root & > .content & > .closeButton {
+    padding-right: 152px;
+  }
+    
+  
+}
+

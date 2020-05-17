@@ -1,0 +1,60 @@
+@import '../../styles/app';
+
+.root {
+  display: inline-flex;
+  margin-left: -2px;
+  justify-content: center;
+  cursor: pointer;
+
+  & > .image {
+    display: flex;
+    vertical-align: top;
+
+    & > img {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      object-fit: cover;
+      cursor: pointer;
+    }
+  }
+}
+
+.content {
+  padding: 30px;
+  position: relative;
+  background-color: $primary-white;
+  text-align: center;
+
+  & > .imageContainer {
+    display: flex;
+    justify-content: center;
+    min-width: 200px;
+    min-height: 210px;
+  }
+
+  button {
+    margin-top: 11px;
+  }
+}
+
+.addPhotoZone {
+  justify-content: center;
+  margin: 5px 0;
+  cursor: pointer;
+
+  &.cropActive {
+    display: none;
+  }
+
+  & > i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    font-size: 100px;
+    border: 1px solid darken($light-gray, 5%);
+    color: $light-gray;
+  }
+}

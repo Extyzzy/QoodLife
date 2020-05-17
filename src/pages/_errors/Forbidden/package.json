@@ -1,0 +1,6 @@
+{
+  "name": "Forbidden",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./Forbidden.js"
+}

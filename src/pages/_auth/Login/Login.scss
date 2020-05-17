@@ -1,0 +1,59 @@
+@import '../../../styles/app';
+
+.root {
+  padding-top: 25vh;
+  min-height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.grid {
+  padding-bottom: $content-padding-vertical + 20px;
+}
+
+.widget {
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 30px !important;
+
+  :global .form-control {
+    font-size: 14px;
+  }
+}
+
+.btnToolbar {
+  display: flex;
+  justify-content: flex-end;
+
+  button + button {
+    margin-left: 10px;
+  }
+
+  @media (min-width: 501px) {
+    float: right;
+  }
+
+  @media (max-width: 500px) {
+    button + button {
+      margin-top: 5px;
+      margin-left: 0;
+    }
+  }
+}
+
+.socialLoginBlock {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+@media (max-width: 400px){
+  .createButton {
+    width: 48%;
+  }
+  
+  .loginButton {
+    width: 48%;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "EditEventForm",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./EditEventFormContainer.js"
+}

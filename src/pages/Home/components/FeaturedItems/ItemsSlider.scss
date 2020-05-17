@@ -1,0 +1,57 @@
+@import '../../../../styles/app';
+
+.root {
+  display: flex;
+  justify-content: center;
+
+  &:hover {
+    .nextArrow,
+    .prevArrow {
+      display: block;
+    }
+  }
+}
+
+.slider {
+  width: 1240px;
+  height: 200px;
+}
+
+.listItem {
+  display: block !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 7.5px !important;
+
+  & > div {
+    height: 200px !important;
+     & > img {
+       height: 200px !important;
+     }
+   }
+
+  & > div + div {
+    & > div {
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.nextArrow,
+.prevArrow {
+  position: absolute;
+  z-index: 55;
+  top: 85px;
+  display: none;
+}
+
+.nextArrow {
+  left: 25px;
+}
+
+.prevArrow {
+  right: 25px;
+}

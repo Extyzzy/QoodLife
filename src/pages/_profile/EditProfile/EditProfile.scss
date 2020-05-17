@@ -1,0 +1,76 @@
+@import '../../../styles/app';
+
+.root {
+  //
+}
+
+.profileDetails {
+  border-bottom: 1px solid lightgrey;
+  margin-bottom: 15px;
+  padding-bottom: 30px;
+}
+
+.confirm {
+  background-color: $brand-success;
+  color: white;
+  padding: 18px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.placesTabs {
+  position: relative;
+
+  .add {
+    padding: 6px 5px;
+    cursor: pointer;
+    position: absolute;
+    right: -3px;
+    top: 6px;
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+      .redirect {
+        display: block;
+      }
+
+      span {
+        opacity: 1;
+      }
+    }
+
+    span {
+      opacity: 0.8;
+    }
+  }
+}
+
+.redirect {
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background-color: white;
+  z-index: 9;
+  transition: all 500ms ease;
+  position: absolute;
+  top: 23px;
+  right: -40px;
+
+  &:hover {
+    display: block;
+  }
+
+  & > div {
+    padding: 10px 20px;
+
+    &:hover {
+      transition: all 500ms ease;
+      background-color: $brand-success;
+      color: white;
+      border-radius: 6px;
+    }
+  }
+}
+

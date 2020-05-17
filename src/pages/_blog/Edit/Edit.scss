@@ -1,0 +1,17 @@
+@import '../../../styles/app';
+
+.root {
+  padding: 15px;
+
+  .title {
+    & > h4 {
+      color: $primary-black;
+      text-align: center;
+      font-size: 30px;
+    }
+  }
+
+  .button {
+    text-align: left;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Graphic",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./Graphic.js"
+}

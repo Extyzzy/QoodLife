@@ -1,0 +1,21 @@
+@import '../../../../../styles/app';
+
+.root {
+  padding-top: 15px;
+
+  & > .head {
+    display: flex;
+    height: 35px;
+    margin: 5px 0;
+    flex-direction: row;
+    justify-content: space-between;
+
+    & h4 {
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+}
+.edit {
+  color: $primary-white;
+}

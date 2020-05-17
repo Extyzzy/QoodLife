@@ -1,0 +1,198 @@
+@import '../../styles/app';
+
+.root {
+  display: inline-flex;
+  margin-bottom: 10px;
+  vertical-align: top;
+  line-height: 2.2em;
+
+  & > div > .oneColumn {
+    width: 274px;
+  }
+
+  & div > label {
+    font-weight: 100;
+  }
+
+  &.mobile {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+
+    & div > label {
+      width: 78px;
+    }
+
+    & > .searchInput {
+      display: flex;
+      padding: 5px;
+
+      &::before {
+        left: 75px;
+      }
+
+      & div {
+        width: 100%;
+
+        & input {
+          height: 30px;
+          width: calc(100% - 5px);
+          padding: 5px;
+          padding-left: 27px;
+          margin: 0 5px;
+        }
+      }
+    }
+
+    & > div > .timePickerContent {
+      position: relative;
+    }
+
+    & > div > .oneColumn {
+      position: relative;
+      width: 100%;
+    }
+
+    & > .selectRange {
+      display: flex;
+      padding: 5px;
+
+      & select {
+        width: 100%;
+        margin-right: 0;
+      }
+    }
+  }
+
+  & > .searchInput {
+    display: flex;
+    vertical-align: top;
+    position: relative;
+    width: 260px;
+
+    &::after {
+      font-family: 'qood-life';
+      content: 'o';
+      position: relative;
+      top: -3px;
+      left: -204px;
+    }
+
+    & > .onCancelPlaceChange {
+      position: relative;
+      top: -3px;
+      right: 25px;
+
+      &:hover::before {
+        color: $brand-danger;
+        opacity: 1;
+      }
+
+      &::before {
+        font-family: 'qood-life';
+        content: '\61';
+        display: inline-block;
+        transform: rotate(45deg);
+        cursor: pointer;
+        font-size: 14px;
+        opacity: 0.5;
+      }
+    }
+
+    & > .disabled {
+      position: relative;
+      top: -3px;
+      right: 28px;
+
+      &::before {
+        font-family: 'qood-life';
+        content: '\61';
+        display: inline-block;
+        color: transparent;
+      }
+    }
+
+    & > .hiddenPlaceChange {
+      position: relative;
+      top: -3px;
+      right: 28px;
+
+      &:hover::before {
+        color: $brand-danger;
+        opacity: 1;
+      }
+
+      &::before {
+        font-family: 'qood-life';
+        content: '\61';
+        display: inline-block;
+        transform: rotate(45deg);
+        cursor: pointer;
+        font-size: 14px;
+        opacity: 0.5;
+      }
+    }
+
+    & input {
+      height: 30px;
+      width: 192px;
+      padding: 5px;
+      padding-left: 27px;
+      margin: 0 5px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  & > .selectRange {
+    vertical-align: top;
+    display: inline-flex;
+
+    &.disabled {
+      color: #aeaeae;
+    }
+
+    select {
+      height: 30px;
+      width: 90px;
+      margin: 0 5px;
+      background-color: $primary-white;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $screen-sm-min) {
+  .root {
+    flex-wrap: wrap;
+
+    & > .searchInput {
+      width: 320px;
+
+      &::after {
+        left: -230px;
+      }
+    }
+
+    &.mobile {
+      justify-content: space-around;
+    }
+  }
+}
+
+@media screen and (max-width: $screen-xs-min) {
+  .root {
+    &.mobile {
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+  }
+}

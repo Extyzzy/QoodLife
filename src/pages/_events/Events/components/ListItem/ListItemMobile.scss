@@ -1,0 +1,184 @@
+@import '../../../../../styles/app';
+
+.root {
+  &.list {
+    border-bottom: 1px solid $light-gray;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    position: relative;
+
+    .image {
+      display: inline-block;
+      vertical-align: top;
+      width: 300px;
+      height: 160px;
+
+      & > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        cursor: pointer;
+      }
+    }
+
+    .details {
+      vertical-align: top;
+      position: relative;
+
+      & > .title {
+        font-size: 20px;
+        margin: 5px 0;
+      }
+
+      & > .name {
+        color: $text-color;
+        white-space: nowrap;
+        width: 18em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      & > div > i {
+        margin-right: 5px;
+        font-size: 15px;
+
+        &::before {
+          position: relative;
+          top: 2px;
+        }
+      }
+
+      & > .schedule,
+      .location,
+      .description {
+        font-size: 15px;
+      }
+
+      & > .location {
+        & > a {
+          text-decoration: none;
+
+          &:hover {
+            color: $brand-danger;
+          }
+        }
+      }
+
+      & > .description {
+        display: block;
+        display: -webkit-box;
+        width: 100%;
+        margin-bottom: 20px;
+        font-size: 15px;
+        line-height: 17px;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      & > .footer {
+        position: absolute;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        bottom: 0;
+
+        .dateTime {
+          color: #aeaeae;
+          display: flex;
+          justify-content: flex-end;
+          align-items: flex-end;
+          line-height: 35px;
+        }
+      }
+    }
+
+    .hasActionButtons {
+      & > .details {
+        & > .intro {
+          color: black;
+          padding-bottom: 40px;
+        }
+      }
+    }
+  }
+
+  .actionButtons {
+    flex-grow: 1;
+    height: 25px;
+    margin-right: 15px;
+    text-align: right;
+  }
+
+  .dayEvent {
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 160px;
+    background-color: rgba(24, 31, 25, 0.6);
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 16px;
+    padding-top: 10px;
+    font-weight: 300;
+
+    .day {
+      display: block;
+      font-size: 32px;
+      font-weight: 600;
+      margin: -5px 0;
+    }
+
+    .category {
+      text-transform: capitalize;
+      font-size: 14px;
+      padding: 3px;
+      line-height: 1.45em;
+    }
+  }
+
+  &.icons {
+    display: table-cell;
+    width: calc(100% / 3);
+    position: relative;
+    padding: 0 10px 10px;
+    margin-bottom: 15px;
+
+    &:hover {
+      .image {
+        & > img {
+          filter: brightness(75%);
+        }
+      }
+
+      .actionButtons {
+        display: block;
+      }
+    }
+
+    .image {
+      & > img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        cursor: pointer;
+      }
+    }
+
+    .actionButtons {
+      display: none;
+      position: absolute;
+      height: 25px;
+      top: 120px;
+      right: 25px;
+    }
+  }
+}
+
+.divMap {
+  height: 600px;
+  width: 955px;
+}

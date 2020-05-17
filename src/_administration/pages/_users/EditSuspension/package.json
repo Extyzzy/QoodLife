@@ -1,0 +1,6 @@
+{
+  "name": "EditSuspension",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./EditContainer.js"
+}

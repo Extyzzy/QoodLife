@@ -1,0 +1,31 @@
+@import '../../../styles/app';
+
+.root {
+  text-align: center;
+}
+
+.reactCropContainer {
+  display: flex;
+  position: relative;
+
+  & > .backdrop {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC');
+    filter: brightness(65%);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  & > div + div {
+    margin: 0 auto;
+
+    @include no-select();
+  }
+}
+
+.buttons {
+  margin-top: 5px;
+  text-align: left;
+}

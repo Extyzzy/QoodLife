@@ -1,0 +1,195 @@
+@import '../../../../../styles/app';
+
+.root {
+  border-bottom: 1px solid $light-gray;
+  padding-bottom: 10px;
+  margin-bottom: 14px;
+  position: relative;
+}
+
+.image {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+
+  &:hover {
+    & > img {
+      filter: brightness(75%);
+    }
+  }
+
+  & > img {
+    width: 300px;
+    height: 160px;
+    object-fit: cover;
+    cursor: pointer;
+    filter: brightness(85%);
+  }
+}
+
+.actionButton {
+  flex-grow: 1;
+  margin-right: 15px;
+  text-align: right;
+}
+.text {
+  white-space: nowrap;
+  width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.actionButtons {
+  position: absolute;
+  height: 25px;
+  right: 15px;
+  bottom: 40px;
+}
+
+.members {
+  color: $primary-white;
+  position: absolute;
+  height: 35px;
+  line-height: 30px;
+  z-index: 8;
+  bottom: 10px;
+  right: 55px;
+
+  & > i {
+    font-size: 15px;
+
+    &::before {
+      -webkit-font-smoothing: subpixel-antialiased;
+      -moz-osx-font-smoothing: inherit;
+    }
+  }
+
+  .currentNumberOfMembersOutOfTotal {
+    margin-left: 10px;
+  }
+}
+
+.details {
+  display: inline-block;
+  vertical-align: top;
+  width: calc(100% - 100px - 240px);
+  padding-left: 15px;
+  position: relative;
+  min-height: 160px;
+
+  & > .title {
+    font-weight: normal;
+    font-size: 20px;
+  }
+
+  & > .map,
+  .description {
+    font-size: 15px;
+  }
+
+  & > .description {
+    display: block;
+    display: -webkit-box;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 15px;
+    line-height: 19px;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  & > .footer {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+
+    .dateTime {
+      color: #aeaeae;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+
+  }
+
+  & > div > i {
+    margin-right: 5px;
+    font-size: 15px;
+
+    &::before {
+      position: relative;
+      top: 2px;
+    }
+  }
+}
+
+.hasActionButtons {
+  & > .details {
+    & > .intro {
+      padding-bottom: 40px;
+    }
+  }
+
+  & > .description {
+    //
+  }
+}
+
+.joinToGroup {
+  color: $primary-white;
+  border: 2px solid $primary-white;
+  border-radius: 50%;
+  background: none;
+  width: 35px;
+  height: 35px;
+  position: relative;
+  top: -5px;
+
+  & > i {
+    font-size: 20px;
+    position: relative;
+    top: 3px;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.isJoining {
+    cursor: progress;
+  }
+}
+
+.dayEvent {
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 160px;
+  background-color: rgba(24, 31, 25, 0.6);
+  color: $primary-white;
+  text-transform: uppercase;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 16px;
+  padding-top: 10px;
+  font-weight: 300;
+  z-index: 5;
+
+  & > .date > .day {
+    display: block;
+    font-size: 32px;
+    font-weight: 600;
+    margin: -5px 0;
+  }
+
+  .category {
+    text-transform: capitalize;
+    font-size: 14px;
+    padding: 3px;
+    line-height: 1.45em;
+  }
+}

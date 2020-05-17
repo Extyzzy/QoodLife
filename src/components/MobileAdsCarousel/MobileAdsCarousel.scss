@@ -1,0 +1,22 @@
+@import '../../styles/app';
+
+.root {
+  position: relative;
+  padding: 10px 0;
+  margin: 10px 0;
+  width: 100%;
+  background-color: $body-bg;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.addDiv {
+  padding-top: 10px;
+  color: $text-color;
+}
+
+.addImage {
+  width: 205px;
+  height: 160px;
+  object-fit: cover;
+}

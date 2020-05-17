@@ -1,0 +1,23 @@
+@import '../../../styles/app';
+
+.root {
+  padding-top: 25vh;
+  min-height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.grid {
+  padding-bottom: $content-padding-vertical + 20px;
+}
+
+.widget {
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 30px !important;
+
+  :global .form-control {
+    font-size: 14px;
+  }
+}

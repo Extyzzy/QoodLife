@@ -1,0 +1,29 @@
+@import '../../../styles/app';
+
+.root {
+  //
+}
+
+.loaderHeight {
+  height: 45px;
+}
+
+.header {
+  .loader {
+    position: absolute;
+  }
+}
+
+.viewModeSwitcher {
+  margin-bottom: 10px;
+}
+
+.professionalsList {
+  & > div:last-child {
+    border-bottom: 0;
+  }
+}
+
+.notFound {
+  margin: 10px 0 0 9px;
+}

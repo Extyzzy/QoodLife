@@ -1,0 +1,13 @@
+@import '../../../styles/app';
+
+.root {
+  padding: 10px 15px 15px;
+}
+
+.header {
+  height: 35px;
+
+  .loader {
+    position: absolute;
+  }
+}

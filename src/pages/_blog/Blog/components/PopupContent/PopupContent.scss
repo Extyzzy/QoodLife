@@ -1,0 +1,126 @@
+@import '../../../../../styles/app';
+
+.root {
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  margin-top: 50px;
+  position: relative;
+
+  & > .title {
+    color: $primary-white;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  & > .poster {
+    position: relative;
+    margin-bottom: 15px;
+
+    & > .image {
+      & > img {
+        width: 100%;
+        height: 500px;
+        object-fit: contain;
+      }
+    }
+  }
+
+  & > .controls {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    margin-bottom: 10px;
+
+    .hidden {
+      opacity: 0;
+      cursor: context-menu;
+    }
+  }
+
+  & > .content {
+    margin-bottom: 0;
+    padding: 5px 15px 5px;
+    background-color: $primary-white;
+    color: black;
+
+    & > img {
+      width: 100% !important;
+      height: auto !important;
+    }
+  }
+
+  & > .tags {
+    display: block;
+    background-color: $primary-white;
+    margin-bottom: 15px;
+    border-top: 1px solid $primary-gray;
+    padding: 10px 15px 15px;
+
+    & > span {
+      margin-right: 5px;
+      padding-left: 10px;
+    }
+
+    & > .tag {
+      display: inline-block;
+      width: fit-content;
+      border: 1px solid #959595;
+      border-radius: 15px;
+      margin: 2px 4px;
+      padding: 2px 10px;
+      font-size: 14px;
+      font-weight: bold;
+
+      &::before {
+        content: '#';
+        margin-right: 2px;
+      }
+    }
+  }
+
+  & > .ownerDetails {
+    flex-direction: row;
+    align-items: center;
+    padding: 15px;
+    padding-top: 10px;
+    height: 70px;
+    background-color: white;
+    display: flex;
+
+    & img, i {
+      display: inline-flex;
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    & i {
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      border: 1px solid darken($light-gray, 5%);
+
+      &::before {
+        top: -2px;
+      }
+    }
+
+
+    & > .aside {
+      display: inline-flex;
+      flex-direction: column;
+      margin-left: 10px;
+
+      & h4 {
+        margin: 0;
+      }
+
+      & a {
+        color: $brand-danger;
+      }
+    }
+  }
+
+}

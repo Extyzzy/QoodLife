@@ -1,0 +1,28 @@
+@import '../../../../styles/app';
+
+.root {
+  width: $sidebar-width-open;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: $sidebar-bg-color;
+  color: $sidebar-color;
+}
+
+.nav {
+  margin-top: 20px;
+  padding: 0;
+  overflow-y: auto;
+}
+
+.brand {
+  display: flex;
+  height: 80px;
+  margin-bottom: 20px;
+  justify-content: center;
+
+  & img {
+    width: 80%;
+  }
+}

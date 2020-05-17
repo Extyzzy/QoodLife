@@ -1,0 +1,22 @@
+@import '../../../../styles/app';
+
+.title {
+  background-color: white;
+  font-size: 26px;
+  font-weight: 500;
+  color: darken($primary-gray, 15%);
+  margin-top: 18px;
+  padding: 10px;
+  padding-left: 18px;
+}
+
+.postsListContainer {
+  margin-left: -10px;
+  margin-right: -10px;
+
+  .postsList {
+    .postsListItem {
+      width: 23%;
+    }
+  }
+}

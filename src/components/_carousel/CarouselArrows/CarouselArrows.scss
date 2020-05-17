@@ -1,0 +1,54 @@
+@import '../../../styles/app';
+
+.nextArrow,
+.prevArrow {
+  color: $primary-white;
+  border: 1px solid $primary-white;
+  background-color: rgba(black, 0.4);
+  outline: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 16px;
+  transform: rotate(-90deg);
+  position: absolute;
+  top: calc(50% - 35px);
+  right: 20px;
+  z-index: 10;
+
+  &::after {
+    font-family: 'qood-life' !important;
+    content: 'A';
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: absolute;
+    top: 8px;
+    left: 6px;
+  }
+
+  &:active {
+    &::after {
+      top: 10px;
+    }
+  }
+}
+
+.prevArrow {
+  transform: rotate(90deg);
+  left: 20px;
+
+  &.mobile {
+    left: 120px;
+  }
+
+  &::after {
+    top: 7px;
+    left: 7px;
+  }
+}

@@ -1,0 +1,64 @@
+@import '../../../../styles/app';
+
+.root {
+  position: relative;
+    .slider {
+      div {
+        & > img {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+  &:hover {
+
+    .prevArrow,
+    .nextArrow {
+      display: block;
+    }
+  }
+}
+
+.prevArrow {
+  left: 50px !important;
+}
+
+.nextArrow {
+  right: 50px !important;
+}
+
+.image {
+  width: 100% !important;
+  height: 420px !important;
+  object-fit: cover;
+}
+
+.goToHobbies {
+  position: absolute;
+  width: 175px;
+  bottom: 25px;
+  left: 50%;
+  margin-left: -87.5px;
+}
+
+.nextArrow,
+.prevArrow {
+  position: absolute;
+  top: 50% !important;
+  margin-top: -15px;
+  right: -30px;
+  display: none;
+  overflow: hidden;
+}
+
+.prevArrow {
+  left: -30px;
+}
+
+
+@media screen and (max-width: $screen-sm-min) {
+  .image {
+    height: 300px !important;
+  }
+}

@@ -1,0 +1,17 @@
+@import '../../styles/app';
+
+.root {
+  position: relative;
+  display: flex;
+  flex-direction: column!important;
+  margin-bottom: 10px;
+
+  & > .link {
+    width: 100%;
+
+    & i, svg {
+      margin-right: 5px;
+      margin-top: 2px;
+    }
+  }
+}

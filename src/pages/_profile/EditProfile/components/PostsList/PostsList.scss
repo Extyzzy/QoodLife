@@ -1,0 +1,103 @@
+@import '../../../../../styles/app';
+
+.root {
+  padding-top: 15px;
+  position: relative;
+
+  & > .head {
+    display: flex;
+    height: 35px;
+    margin: 5px 0;
+    flex-direction: row;
+    justify-content: space-between;
+
+    & h4 {
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+}
+
+.rootMobile {
+  position: relative;
+
+  & > .head {
+    display: inline-block;
+    height: 70px;
+    margin: 5px 0;
+    flex-direction: row;
+    justify-content: space-between;
+
+    & h4 {
+      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+}
+
+.seeAll {
+  border: 0;
+  background-color: transparent;
+  color: gray;
+}
+
+.pending {
+  background-color: $brand-success !important;
+  color: white !important;
+}
+
+.activate {
+  background-color: transparent;
+  border: 1px solid $brand-success;
+  padding: 5px 10px;
+  border-radius: 25px;
+  outline: 0 !important;
+  touch-action: none;
+  margin-left: 5px;
+
+  &:hover {
+    background-color: $brand-success;
+    color: white;
+  }
+}
+
+.createPostButton {
+  width: 100%;
+}
+
+.addPostsButton {
+  height: 32px;
+  margin-bottom: 0;
+  border-radius: 22px;
+  background: transparent;
+  border: solid 1px #ed6853;
+  color: #ed6853;
+  font-weight: bold;
+  float: right;
+  position: relative;
+  z-index: 1;
+
+  &:focus{
+    outline: none;
+  }
+
+  &:hover {
+    background-color: #ed6853;
+    color: white;
+  }
+}
+
+.addPostsDiv {
+  height: 30px;
+  margin-top: -16px;
+}
+
+.buttonDiv {
+  position: absolute;
+  right: 35px;
+}
+
+.postsList {
+  top: -10px;
+}

@@ -1,0 +1,174 @@
+@import '../../../styles/app';
+
+.root {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.activated {
+  background-color: $brand-success;
+  color: $primary-white;
+}
+
+.plansList {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+
+  & > .columns {
+    float: left;
+    width: 15%;
+    padding: 8px;
+
+    &.plansDescription {
+      width: 25%;
+
+      & > .price:hover {
+        box-shadow: initial;
+      }
+    }
+
+    &.individualForm {
+      width: 75%;
+
+      & > .price:hover {
+        box-shadow: initial;
+      }
+    }
+
+    & > .price {
+      list-style-type: none;
+      border: 1px solid #eee;
+      margin: 0;
+      padding: 0;
+      -webkit-transition: 0.3s;
+      transition: 0.3s;
+
+      &:hover {
+        box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+        border: 1px solid $brand-success;
+      }
+
+      & > .header {
+        height: 60px;
+        background-color: $brand-success;
+        color: $primary-white;
+        font-size: 20px;
+      }
+
+      & > li {
+        height: 50px;
+        border-bottom: 1px solid #eee;
+        padding: 10px;
+        text-align: center;
+        font-size: 15px;
+        line-height: 2;
+
+        &.selected {
+          background-color: #eee;
+          color: $brand-success;
+          font-weight: 700;
+        }
+
+        &.afterRequest {
+          background-color: #eee !important;
+          color: $brand-success !important;
+          font-weight: 700 !important;
+          cursor: default;
+        }
+
+        &.red {
+          background-color: $brand-success;
+          color: white;
+        }
+
+        &.grey {
+          display: flex;
+          justify-content: center;
+          background-color: #eee;
+          font-size: 18px;
+          position: relative;
+
+          & > .optionGet {
+            position: absolute;
+            background-color: $brand-success;
+            border: none;
+            color: $primary-white;
+            font-size: 16px;
+            width: 100%;
+            height: 82%;
+            cursor: pointer;
+          }
+
+          & > .cursor {
+            cursor: context-menu;
+          }
+        }
+
+        & i.minus {
+          display: inline-flex;
+          font-size: 20px;
+
+          &::before {
+            @include rotate(45);
+          }
+        }
+      }
+    }
+  }
+}
+
+.bottom {
+  display: flex;
+}
+
+.send {
+  padding-top: 7px;
+  padding-left: 7px;
+  color: $brand-success;
+}
+
+.position {
+  position: relative;
+  i {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 18px;
+    color: #9e9c9c;
+    cursor: pointer;
+  }
+}
+
+.payment {
+  background-color: white;
+  padding: 15px;
+  position: absolute;
+  top: 40px;
+  width: 856px;
+}
+
+.pdfInfoContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 825px;
+
+  & > .optionsActivated {
+    position: relative;
+    padding: 15px;
+    width: calc(100% / 4 -5px);
+    border: 1px solid gray;
+    margin: 1px;
+
+    & > .optionName {
+      color: $brand-success;
+    }
+
+    & > .optionDates {
+      //
+    }
+  }
+}

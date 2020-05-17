@@ -1,0 +1,27 @@
+@import '../../styles/app';
+
+.root {
+  margin: 10px;
+  border: 4px solid $primary-white;
+  border-top-color: $text-color;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.sm {
+  border-width: 3px;
+  width: 20px;
+  height: 20px;
+}
+
+.contrast {
+  border-color: #eee;
+  border-top-color: $text-color;
+}

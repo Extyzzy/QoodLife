@@ -1,0 +1,163 @@
+@import '../../../styles/app';
+
+.root {
+  border-bottom: 1px solid $primary-gray;
+  background-color: $primary-white;
+
+  .image {
+    height: 31px;
+  }
+}
+
+.brand {
+  width: 230px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  img {
+    height: 50px;
+  }
+}
+
+.categories {
+
+  & > li {
+    & > a {
+      display: flex;
+
+      & > i {
+        font-size: 30px;
+
+        &::before {
+          -webkit-font-smoothing: subpixel-antialiased;
+          -moz-osx-font-smoothing: inherit;
+        }
+      }
+
+      & > span {
+        align-self: center;
+        display: none;
+        padding-left: 5px;
+      }
+    }
+
+    &.active {
+      &:hover > a,
+      & > a:focus,
+      & > a {
+        background-color: $brand-success;
+        color: $primary-white;
+        height: 100%;
+
+        & > span {
+          display: initial;
+        }
+      }
+    }
+  }
+}
+
+.searchAndProfile {
+  margin-right: 15px;
+
+  .headerDropdown {
+    display: inline-flex;
+    margin: 0;
+    width: 175px;
+    height: 59px;
+
+    & > a {
+      width: 100%;
+
+      & > span {
+        margin: 0 5px;
+        display: flex;
+        justify-content: center;
+
+        & > i {
+          font-size: 30px;
+
+          &::before {
+            -webkit-font-smoothing: subpixel-antialiased;
+            -moz-osx-font-smoothing: inherit;
+          }
+        }
+
+        & > span {
+          width: calc(100% - 65px);
+          text-align: center;
+          line-height: 31px;
+        }
+      }
+    }
+
+    &.open {
+      & > a {
+        width: 100%;
+        background-color: $brand-success !important;
+        color: $primary-white !important;
+      }
+
+      & > ul {
+        border-color: $primary-white;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+
+  .activeMenuItem {
+    & > a:hover {
+      color: black !important;
+    }
+  }
+
+  .searchInput {
+    display: inline-flex;
+    padding: 13px 10px;
+    height: 52px;
+    position: relative;
+    width: 340px;
+
+    &::before {
+      font-family: 'qood-life';
+      content: "K";
+      position: absolute;
+      font-size: 16px;
+      z-index: 3;
+      top: 17px;
+      left: 20px;
+      opacity: 0.6;
+    }
+
+    & > input {
+      width: 100%;
+      border: solid 1.4px gainsboro;
+      font-size: 18px;
+      line-height: 22px;
+      padding: 7px 10px 5px 30px;
+      height: 32px;
+      position: relative;
+      border-radius: 15px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+.nav > li > a {
+  padding: 13px 3px !important;
+}
+
+@media screen and (max-width: 350px) {
+  .categories {
+    & > li {
+      & > a {
+        & > i {
+          font-size: 23px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@import '../../styles/app';
+
+.root {
+  padding: 15px 15px 15px;
+
+  & > hr {
+    margin: 15px;
+    border-top: 1px solid $light-gray;
+  }
+
+  &.mobile {
+    padding: 15px 0;
+
+    & > .header {
+      height: 0;
+    }
+  }
+
+  & > .header {
+    height: 35px;
+  }
+
+  .filter {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+}
+
+.mapElement,
+.containerElement {
+  height: 100%;
+}
+
+.divMap {
+  height: 600px;
+}
+
+.viewModeSwitcher {
+  width: 125px;
+  display: inline-block;
+}
+
+.professionalsList,
+.placesList {
+  & > h3 {
+    margin: 10px;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: $screen-sm-min) {
+  .professionalsList,
+  .placesList {
+    text-align: center;
+  }
+  .viewModeSwitcher {
+    width: 0;
+  }
+}

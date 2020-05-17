@@ -1,0 +1,63 @@
+@import '../../../styles/app';
+
+.root {
+  font-size: $font-size-small - 1;
+  z-index: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 7px $content-padding-horizontal;
+}
+
+.spacer {
+  display: inline-block;
+  padding: 0 5px;
+}
+
+.list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 790px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+
+  li > a {
+    &:hover {
+      background-color: $body-bg !important;
+      text-decoration: underline !important;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+
+  & > .langOption {
+    padding: 5px;
+    color: $link-color;
+
+    & span:hover {
+      background-color: $body-bg !important;
+      text-decoration: underline !important;
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (max-width: $screen-sm-min) {
+  .root {
+    position: static;
+    margin: auto;
+
+    .list {
+      width: 100%;
+    }
+  }
+}

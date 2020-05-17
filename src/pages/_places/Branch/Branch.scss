@@ -1,0 +1,193 @@
+@import '../../../styles/app';
+
+.divMap {
+  position: absolute;
+  height: 600px;
+  width: 855px;
+  top: 40px
+}
+
+.divMapRel {
+  position: relative;
+  height: 600px;
+  width: 825px;
+}
+
+.mapElement,
+.containerElement {
+  height: 100%;
+}
+
+.listItem {
+  display: flex;
+  flex-wrap: wrap;
+
+  & > div {
+    display: table-cell;
+    position: relative;
+    margin: 13px 0;
+    width: 265px;
+    padding: 0 10px 10px;
+  }
+}
+
+.branch {
+  &:hover {
+    .image {
+      & > img {
+        filter: brightness(75%);
+      }
+    }
+
+    .actionButtons {
+      display: block;
+    }
+  }
+
+  .image {
+    position: relative;
+
+    & > img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      cursor: pointer;
+      padding: 0 10px;
+    }
+  }
+
+  .actionButtons {
+    display: none;
+    position: absolute;
+    height: 25px;
+    top: 120px;
+    right: 25px;
+  }
+
+  .location {
+    white-space: nowrap;
+    width: 230px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.list {
+  display: flex;
+  margin: 10px 0;
+
+  .description {
+    display: flex;
+
+    .content {
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      width: 100%;
+      height: 86px;
+      overflow: hidden;
+      margin-left: 4px;
+    }
+  }
+
+  &:hover {
+    .image {
+      & > img {
+        filter: brightness(75%);
+      }
+    }
+
+    .actionButtons {
+      display: block;
+    }
+  }
+
+  .img {
+    position: relative;
+    width: 30%;
+
+    & > img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      cursor: pointer;
+    }
+  }
+
+  .actionButtons {
+    display: none;
+    position: absolute;
+    height: 25px;
+    top: 120px;
+    right: 25px;
+  }
+
+  .details {
+    margin-left: 10px;
+    width: 70%;
+
+    & > div {
+      margin: 10px 0;
+      position: relative;
+
+      & > i {
+        position: absolute;
+        top: 2px;
+      }
+
+      & > span {
+        padding-left: 20px;
+      }
+
+      & > a {
+        padding-left: 20px;
+      }
+    }
+  }
+}
+
+.popupContent {
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  margin-top: 50px;
+  position: relative;
+
+  & > .title {
+    color: $primary-white;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  & > .poster {
+    position: relative;
+    margin-bottom: 15px;
+
+      img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+    }
+
+  & > .detailsPopup {
+    position: relative;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: $primary-white;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    & > div {
+      display: flex;
+      flex-direction: row;
+      margin: 2px 5px;
+
+      & > i {
+        margin-right: 5px;
+        margin-top: 2px;
+      }
+    }
+  }
+}

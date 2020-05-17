@@ -1,0 +1,93 @@
+@import '../../../../../styles/app';
+
+.root {
+  position: relative;
+  width: 80%;
+  min-height: 160px;
+  margin: 0 10%;
+  padding-bottom: 40px;
+
+  .top {
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+
+    & > span {
+      color: #6a6a7a;
+      line-height: 1.7em;
+    }
+
+    & > .userName {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    & > .avatar {
+      vertical-align: top;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin: 10px 0;
+      height: 200px;
+
+      & > i {
+        font-size: 100px;
+        text-align: center;
+        padding: 40px 30px;
+        display: block;
+        width: 100%;
+        height: 200px;
+        border: 1px solid darken($light-gray, 5%);
+        color: $light-gray;
+      }
+
+      & > img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  & > .profileDetails {
+    display: flex;
+    flex-direction: column;
+    min-height: 130px;
+    text-align: left;
+
+    & > .detaildsField {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      & > i {
+        display: inline-flex;
+        padding: 5px 4px 4px 0;
+        margin-right: 8px;
+        color: #6a6a7a;
+      }
+
+      & > p {
+        display: inline-flex;
+        font-size: 18px;
+        margin: 0;
+      }
+    }
+  }
+
+  & > .ownedItems {
+    padding: 5px;
+  }
+
+  & > .editMode {
+    display: flex;
+    padding: 0 10px;
+    width: 50px;
+    vertical-align: top;
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    top: 0;
+  }
+}

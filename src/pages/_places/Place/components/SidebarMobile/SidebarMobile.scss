@@ -1,0 +1,170 @@
+@import '../../../../../styles/app';
+
+.root {
+  position: fixed;
+  top: 65px;
+  z-index: 11;
+
+  .backgroundShadow {
+    background: rgba(0, 0, 0, 0.75);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 9;
+  }
+
+  .group {
+    & > a {
+      display: block;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      color: $text-color;
+      background-color: transparent;
+      border: 1px solid $text-color;
+      line-height: 30px;
+      padding: 0 15px;
+      border-radius: 25px;
+      margin-bottom: 5px;
+      font-weight: 600;
+      position: relative;
+
+      &::after {
+        font-family: 'qood-life';
+        font-size: 15px;
+        content: 'A';
+        position: absolute;
+        right: 9px;
+        top: 2px;
+
+        @include transition(transform 0.4s);
+        @include rotate(90);
+      }
+    }
+
+    &.open > a,
+    & > a:hover {
+      color: $primary-white;
+      background-color: $brand-success;
+      border-color: $brand-success;
+      font-weight: 600;
+    }
+
+    &.open {
+      margin-bottom: 10px;
+
+      & > a {
+        &::after {
+          @include rotate(0);
+        }
+      }
+
+      & > ul {
+        display: block;
+      }
+    }
+  }
+
+  .scrollBars {
+    height: 300px;
+  }
+
+  .swith {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 10px;
+    z-index: 10;
+    width: 100%;
+  }
+
+  .buttonsCategory {
+    padding: 15px;
+  }
+
+  .containnerCategory {
+    position: fixed;
+    left: -100%;
+    width: 250px;
+    height: 100%;
+    z-index: 11;
+    background-color: $body-bg;
+    transition: left 0.9s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .showSideBar {
+    left: 0;
+  }
+
+  .containerButton {
+    .button {
+      padding: 10px;
+      display: block;
+      border-radius: 30px;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.35);
+      position: relative;
+      right: 10px;
+      background-color: $brand-success;
+      font-weight: 600;
+      color: $primary-white;
+    }
+
+    span {
+      position: absolute;
+      top: 9px;
+      left: 12px;
+    }
+  }
+
+  .containerCloseButton {
+    margin-bottom: 70px;
+    z-index: 10;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+
+    .closeButton {
+      width: 43px;
+      height: 43px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 30px;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.35);
+      position: relative;
+      background-color: $btn-close-grey;
+      font-weight: 600;
+      color: $primary-white;
+    }
+
+    .icon {
+      margin-left: 1px;
+      margin-top: -1px;
+    }
+  }
+}
+
+li {
+  &.filterList {
+    list-style: none;
+    margin-left: -20px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid transparent;
+  }
+
+  &.active {
+    font-weight: 700;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .containnerCategory {
+    width: 90% !important;
+  }
+
+  .containerCloseButton {
+    width: 100% !important;
+  }
+}

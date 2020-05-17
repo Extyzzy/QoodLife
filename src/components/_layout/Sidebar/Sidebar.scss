@@ -1,0 +1,326 @@
+@import '../../../styles/app';
+
+.root {
+  padding-top: 10px;
+  position: fixed;
+  width: 185px;
+
+  @media screen and (max-height: 600px), screen and (max-width: 1000px) {
+    & {
+      position: fixed;
+    }
+  }
+}
+
+.profile {
+  top: 407px !important;
+}
+
+.rootPlaceorProf {
+  position: static !important;
+}
+
+.calendarFilterContainer {
+  position: absolute;
+  top: 529px;
+}
+
+.group {
+  & > a {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    color: $text-color;
+    background-color: transparent;
+    border: 1px solid $text-color;
+    line-height: 30px;
+    padding: 0 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    position: relative;
+    margin-right: 5px;
+    width: 180px;
+
+    &::after {
+      font-family: 'qood-life';
+      font-size: 12px;
+      content: 'A';
+      position: absolute;
+      right: 9px;
+      top: 2px;
+
+      @include transition(transform 0.4s);
+      @include rotate(90);
+    }
+  }
+
+
+  & li {
+    &.filterList {
+      list-style: none;
+      margin-left: -20px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid transparent;
+      cursor: pointer;
+
+      &:hover {
+        color: $brand-success;
+        border-bottom: 1px solid $brand-success;
+        width: 150px;
+      }
+    }
+
+    &.active {
+      font-weight: 700;
+    }
+  }
+
+  & .category {
+    position: relative;
+    cursor: pointer;
+    margin: 0;
+    min-height: 30px;
+    border-bottom: 1px solid $body-bg;
+    display: flex;
+    justify-content: space-between;
+
+    & i {
+      font-size: 10px;
+      right: 5px;
+      top: 5px;
+      position: absolute;
+      color: darken($light-gray, 40%);
+
+      &.left {
+        transform: rotate(90deg);
+        color: darken($light-gray, 5%);
+      }
+    }
+
+    &:hover {
+      color: $brand-success;
+      border-bottom-color: $brand-success;
+    }
+
+    &.active {
+      font-weight: 700;
+    }
+  }
+
+  &.open > a,
+  & > a:hover {
+    color: $primary-white;
+    background-color: $brand-success;
+    border-color: $brand-success;
+  }
+
+  &.open {
+    margin-bottom: 10px;
+
+    & > a {
+      &::after {
+        @include rotate(0);
+      }
+    }
+
+    & > ul {
+      display: block;
+    }
+  }
+}
+
+.placesAndProsOptions {
+  cursor: pointer;
+  padding-left: 20px;
+
+  & p {
+    color: darken($light-gray, 5%);
+    font-size: 12px;
+  }
+
+  & ul {
+    padding-left: 20px;
+  }
+
+  & li {
+    position: relative;
+    list-style-type: circle;
+    min-height: 30px;
+    border-bottom: 1px solid $body-bg;
+
+    & i {
+      font-size: 10px;
+      right: 5px;
+      top: 5px;
+      position: absolute;
+      color: darken($light-gray, 40%);
+
+      &.left {
+        transform: rotate(90deg);
+        color: darken($light-gray, 5%);
+      }
+    }
+
+    &:hover {
+      color: $brand-success;
+      border-bottom-color: $brand-success;
+    }
+
+    &.active {
+      list-style-type: disc;
+      font-weight: 700;
+    }
+  }
+}
+
+.hobby {
+  position: relative;
+  list-style: circle;
+  cursor: pointer;
+  min-height: 30px;
+  margin-left: -20px;
+  border-bottom: 1px solid $body-bg;
+
+  & i {
+    font-size: 10px;
+    right: 5px;
+    top: 5px;
+    position: absolute;
+    color: darken($light-gray, 40%);
+
+    &.left {
+      transform: rotate(90deg);
+      color: darken($light-gray, 5%);
+    }
+  }
+
+
+  &:hover {
+    color: $brand-success;
+    border-bottom-color: $brand-success;
+  }
+
+  &.active {
+    list-style: disc;
+    font-weight: 700;
+  }
+}
+
+.subcategoryHobby {
+  list-style: none;
+  margin-left: -20px;
+}
+
+.scrollBars {
+  height: 300px;
+}
+
+.list {
+  list-style: none;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.links {
+  margin-bottom: 10px;
+
+  li {
+    a {
+      padding: 2px 0;
+      color: $text-color;
+
+      &:hover {
+        text-shadow: 0 0 0.01px black;
+        background-color: transparent;
+      }
+    }
+  }
+
+  .buttonMyProfile {
+    cursor: pointer;
+    color: $text-color;
+    background-color: $body-bg;
+    display: block;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    line-height: 30px;
+    padding: 0 15px;
+    border-radius: 25px;
+    margin-bottom: 5px;
+    position: relative;
+    transition: 0.25s;
+    border: 1px solid $text-color;
+    position: relative;
+
+    &:hover {
+      color: $primary-white;
+      background-color: $brand-success;
+      border-color: $brand-success;
+    }
+
+    &::after {
+      font-family: 'qood-life';
+      font-size: 15px;
+      content: 'A';
+      position: absolute;
+      right: 9px;
+      top: 2px;
+
+      @include transition(transform 0.4s);
+      @include rotate(90);
+    }
+  }
+
+  .active {
+    background-color: $brand-success;
+    border-color: $brand-success;
+    color: $primary-white;
+
+    &::after {
+      @include rotate(0);
+    }
+  }
+}
+
+.activeLink {
+  text-shadow: 0 0 0.01px black;
+
+}
+
+@media screen and (max-width: $screen-sm-min) {
+  .hobby {
+    margin-left: -20px;
+    padding: 3px 0;
+  }
+
+  .subcategoryHobby {
+    list-style: none;
+    margin-left: -20px;
+  }
+
+  .scrollBars {
+    height: 300px;
+  }
+
+  .list {
+    list-style: none;
+    padding-left: 15px;
+
+    & > .contentHobby {
+      position: relative;
+      padding: 3px 0;
+      margin-bottom: 20px;
+    }
+  }
+
+  .active {
+    &::after {
+      @include rotate(0);
+    }
+  }
+}
+

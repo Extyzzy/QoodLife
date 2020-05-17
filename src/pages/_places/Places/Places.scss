@@ -1,0 +1,19 @@
+@import '../../../styles/app';
+
+.root {
+  //
+}
+
+.loaderHeight {
+  height: 45px;
+}
+
+.header {
+  .loader {
+    position: absolute;
+  }
+}
+
+.notFound {
+  margin: 10px 0 0 9px;
+}
